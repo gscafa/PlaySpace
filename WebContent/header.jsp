@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8" session="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,12 @@
     <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
-
+  <%
+Boolean logged = (Boolean) session.getAttribute("logged");
+  if(logged==null) logged = false;
+  Boolean admin = (Boolean) session.getAttribute("admin");
+  if(admin == null) admin = false;
+%>  
  <!--header area start-->
     <!--Offcanvas menu area start-->
     <div class="off_canvars_overlay">
@@ -178,7 +183,15 @@
                                 </div>
                                 <div class="middel_right_info">
                                     <div class="header_wishlist">
-                                        <a href="utente.jsp"><img src="assets/img/user.png" alt=""></a>
+                                    <%if(admin == true && logged == true) {%>
+                                        <a href="admin.jsp"><img src="assets/img/user.png" alt=""></a>
+                                        <%}
+                                    else if(admin == true){%>
+                                    <a href="utente.jsp"><img src="assets/img/user.png" alt=""></a>
+                                        <%}
+                                        else {%>
+                                        <a href="login.jsp"><img src="assets/img/user.png" alt=""></a>
+                                        <%} %>
                                     </div>
                                     <div class="mini_cart_wrapper">
                                         <a href="carrello.jsp"><img src="assets/img/shopping-bag.png" alt=""></a>

@@ -35,7 +35,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="account-contents" style="background: url('logo.svg'); background-size: cover;">
+                    <div class="account-contents" style="background: url('assets/img/logo/logo.svg'); background-size: cover;">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-thumb">

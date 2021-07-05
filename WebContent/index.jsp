@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!doctype html>
+
 <html class="no-js" lang="en">
 
 <!--   03:20:39 GMT -->
@@ -28,9 +28,9 @@
 
 <body>
 
-   
-<%@include file="header.jsp" %>
  
+<%@include file="header.jsp" %>
+ <%if (logged==true) out.println("<h1>Cionnnaaaa</h1>");%>
 
 
  <section class="slider_section d-flex align-items-center" >

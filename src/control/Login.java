@@ -32,7 +32,8 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		String n="",c="",i="",ci="",dn="";
 		boolean a=false;
-		
+		HttpSession session = request.getSession();
+		session.setAttribute("logged", false);
 		try {
 		Connection con = DriverManagerConnectionPool.getConnection();
 		PreparedStatement st = con.prepareStatement("select * from utente where email = ? and password = ?;");
@@ -58,9 +59,15 @@ public class Login extends HttpServlet {
 		}
 		
 		Utente user = new Utente(n,c,email,password,i,ci,dn,a);
-		HttpSession session = request.getSession();
+		
 		session.setAttribute("user", user);
-		response.sendRedirect(request.getContextPath() + "/result.jsp");
+		if(user != null) 
+			session.setAttribute("logged", true);
+		if(a)
+			session.setAttribute("admin", true);
+		
+		request.getRequestDispatcher("index.jsp").forward(request,response);
+		//response.sendRedirect(request.getContextPath() + "/result.jsp");
 		
 	}
 
