@@ -176,8 +176,8 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                                 <div class="search_container">
                                    <form action="#">
                                         <div class="search_box">
-                                            <input placeholder="Search product..." type="text">
-                                            <button type="submit">Search</button> 
+                                            <input placeholder="Cerca prodotti" type="text">
+                                            <button type="submit">Cerca</button> 
                                         </div>
                                     </form>
                                 </div>

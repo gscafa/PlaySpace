@@ -32,6 +32,7 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		String n="",c="",i="",ci="",dn="";
 		boolean a=false;
+		boolean found = false;
 		HttpSession session = request.getSession();
 		session.setAttribute("logged", false);
 		try {
@@ -42,6 +43,7 @@ public class Login extends HttpServlet {
 		
 		ResultSet rs = st.executeQuery();
 		if(rs.next()) {
+			found = true;
 			n = rs.getString("nome");
 			c = rs.getString("cognome");
 			i = rs.getString("indirizzo");
@@ -49,7 +51,7 @@ public class Login extends HttpServlet {
 			dn = rs.getString("dataNascita");
 			a  = rs.getBoolean("admin");
 		}
-		else System.out.println("utente non trovato");
+		
 		
 		DriverManagerConnectionPool.releaseConnection(con);
 		
@@ -57,7 +59,7 @@ public class Login extends HttpServlet {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		
+		if(found) {
 		Utente user = new Utente(n,c,email,password,i,ci,dn,a);
 		
 		session.setAttribute("user", user);
@@ -65,9 +67,14 @@ public class Login extends HttpServlet {
 			session.setAttribute("logged", true);
 		if(a)
 			session.setAttribute("admin", true);
-		
+		session.setAttribute("userFound", true);
 		request.getRequestDispatcher("index.jsp").forward(request,response);
-		//response.sendRedirect(request.getContextPath() + "/result.jsp");
+		}
+		else {
+			session.setAttribute("userFound", false);
+			request.getRequestDispatcher("login.jsp").forward(request,response);
+		}
+		
 		
 	}
 

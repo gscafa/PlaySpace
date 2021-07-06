@@ -29,7 +29,8 @@
 <body>
 
    <%@include file="header.jsp" %>
-
+<%Boolean found = (Boolean) session.getAttribute("userFound"); 
+if (found==null) found = true;%>
  
 <section class="account">
         <div class="container">
@@ -55,8 +56,11 @@
                                             <label for="password">Password</label>
                                             <input type="password" id="password" placeholder="Inserisci password" name="password" required>
                                         </div>
-
-                                        
+                                        <%if(!found) {%>
+										<div class="single-acc-field">
+                                            <h4 style="color:red;">Email e/o password errati, riprova</h4>
+                                        </div>
+                                        <%} %>
                                         <div class="single-acc-field">
                                             <button type="submit">Accedi</button>
                                         </div>
