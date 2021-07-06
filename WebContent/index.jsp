@@ -30,7 +30,7 @@
 
  
 <%@include file="header.jsp" %>
- <%if (logged==true) out.println("<h1>Cionnnaaaa</h1>");%>
+
 
 
  <section class="slider_section d-flex align-items-center" >

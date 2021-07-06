@@ -45,7 +45,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-content">
-                                    <form action="Login">
+                                    <form action="Login" method="post">
                                        
                                         <div class="single-acc-field">
                                             <label for="email">Email</label>

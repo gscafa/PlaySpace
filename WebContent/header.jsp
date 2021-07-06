@@ -186,7 +186,7 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                                     <%if(admin == true && logged == true) {%>
                                         <a href="admin.jsp"><img src="assets/img/user.png" alt=""></a>
                                         <%}
-                                    else if(admin == true){%>
+                                    else if(logged == true){%>
                                     <a href="utente.jsp"><img src="assets/img/user.png" alt=""></a>
                                         <%}
                                         else {%>
@@ -222,30 +222,8 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                                                     <a href="#"><i class="ion-android-close"></i></a>
                                                 </div>
                                             </div>
-                                             <div class="cart_item">
-                                               <div class="cart_img">
-                                                   <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
-                                               </div>
-                                                <div class="cart_info">
-                                                    <a href="#">Sit voluptatem rhoncus sem lectus</a>
-                                                    <p>Qty: 1  <span> $60.00 </span></p>    
-                                                </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </div>
-                                             <div class="cart_item">
-                                               <div class="cart_img">
-                                                   <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
-                                               </div>
-                                                <div class="cart_info">
-                                                    <a href="#">Sit voluptatem rhoncus sem lectus</a>
-                                                    <p>Qty: 1  <span> $60.00 </span></p>    
-                                                </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </div>
+                                             
+                                            
                                             <div class="mini_cart_table">
                                                 <div class="cart_total">
                                                     <span>Sub total:</span>
@@ -269,9 +247,15 @@ Boolean logged = (Boolean) session.getAttribute("logged");
 
                                         </div>
                                         <!--mini cart end-->
+                                         
                                     </div>
+                                    <%if(logged){ %>
+                             <a href="Logout"><h4 style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Logout</h4></a><%} %>
                                 </div>
+                                
+                               
                             </div>
+                            
                         </div>
                     </div>
                 </div>
