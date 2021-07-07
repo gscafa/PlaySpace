@@ -70,6 +70,7 @@
                                         <div class="single-acc-field">
                                             <label for="password">Password</label>
                                             <input type="password" id="password" placeholder="Inserisci password" name="password" required>
+                                            <p id="pwp" style="color:red; "></p>
                                         </div>
 
                                         <div class="single-acc-field">
@@ -139,6 +140,12 @@ function checkPhonenumber(inputtxt) {
 	return false;
 }
 
+function checkPassword(inputtxt){
+	var pw = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$/;
+	if(inputtxt.value.match(pw))
+		return true;
+	return false;
+}
 
 function validate(obj) {	
 	var valid = true;	
@@ -161,15 +168,21 @@ function validate(obj) {
 		document.getElementById("cognomep").innerHTML = "";
 	}
 	
-	var surname = document.getElementsByName("citta")[0];
-	if(!checkNamesurname(surname)) {
+	var citta = document.getElementsByName("citta")[0];
+	if(!checkNamesurname(citta)) {
 		valid = false;
 		document.getElementById("cittap").innerHTML = "Formato non corretto";
 	} else {
 		document.getElementById("cittap").innerHTML = "";
 	}
 	
-	
+	var pw = document.getElementsByName("password")[0];
+	if(!checkPassword(pw)) {
+		valid = false;
+		document.getElementById("pwp").innerHTML = "La password deve contenere almeno 8 caratteri, almeno una maiuscola, un numero e un carattere speciale";
+	} else {
+		document.getElementById("pwp").innerHTML = "";
+	}
 	
 	
 	if(valid) obj.submit();
