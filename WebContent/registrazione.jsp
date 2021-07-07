@@ -45,15 +45,17 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-content">
-                                    <form action="Registrazione" method="get">
+                                    <form action="Registrazione" method="post" onsubmit="event.preventDefault(); validate(this)">
                                         <div class="single-acc-field">
                                             <label for="name">Nome</label>
                                             <input type="text" id="name" placeholder="Inserisci nome" name="nome" required>
+                                            <p id="nomep" style="color:red; "></p>
                                         </div>
 
                                         <div class="single-acc-field">
                                             <label for="name">Cognome</label>
                                             <input type="text" id="name" placeholder="Inserisci cognome" name="cognome" required>
+                                            <p id="cognomep" style="color:red; "></p>
                                         </div>
 
                                         <div class="single-acc-field">
@@ -71,8 +73,9 @@
                                         </div>
 
                                         <div class="single-acc-field">
-                                            <label for="citta">CittÃ </label>
+                                            <label for="citta">Citta' </label>
                                             <input type="text" id="citta" placeholder="Inserisci citta" name="citta" required>
+                                            <p id="cittap" style="color:red; "></p>
                                         </div>
 
                                         <div class="single-acc-field">
@@ -98,6 +101,7 @@
         </div>
     </section>
 
+
 <%@ include file="footer.jsp" %>
 
    <!-- Plugins JS -->
@@ -105,6 +109,68 @@
 
 <!-- Main JS -->
 <script src="assets/js/main.js"></script>
+<script>
+function checkNamesurname(inputtxt) {
+	var name = /^[A-Za-z]+$/;;
+	if(inputtxt.value.match(name)) 
+		return true
+
+	return false;	
+}
+
+function checkEmail(inputtxt) {
+	var email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(inputtxt.value.match(email)) 
+		return true;
+	
+	return false;	
+}
+
+function checkPhonenumber(inputtxt) {
+	var phoneno = /^([0-9]{3}-[0-9]{7})$/;
+	if(inputtxt.value.match(phoneno)) 
+		return true;
+	
+	return false;
+}
+
+
+function validate(obj) {	
+	var valid = true;	
+	
+	var name = document.getElementsByName("nome")[0];
+	if(!checkNamesurname(name)) {
+		valid = false;
+		
+		document.getElementById("nomep").innerHTML = "Formato non corretto";
+	} else {
+		
+		document.getElementById("nomep").innerHTML = "";
+	}
+	
+	var surname = document.getElementsByName("cognome")[0];
+	if(!checkNamesurname(surname)) {
+		valid = false;
+		document.getElementById("cognomep").innerHTML = "Formato non corretto";
+	} else {
+		document.getElementById("cognomep").innerHTML = "";
+	}
+	
+	var surname = document.getElementsByName("citta")[0];
+	if(!checkNamesurname(surname)) {
+		valid = false;
+		document.getElementById("cittap").innerHTML = "Formato non corretto";
+	} else {
+		document.getElementById("cittap").innerHTML = "";
+	}
+	
+	
+	
+	
+	if(valid) obj.submit();
+}
+</script>
+
 </body>
 
 <!--   03:22:07 GMT -->
