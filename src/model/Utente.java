@@ -2,9 +2,10 @@ package model;
 
 public class Utente {
 
-	public Utente(String n, String c, String e, String p, String i, String ci, String dn, boolean b) {
+	public Utente(String n, String c, String u, String e, String p, String i, String ci, String dn, boolean b) {
 		nome=n;
 		cognome=c;
+		username = u;
 		email=e;
 		password=p;
 		indirizzo=i;
@@ -66,8 +67,21 @@ public class Utente {
 
 
 
+	
+	
+	public String getUsername() {
+		return username;
+	}
+
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	String nome;
 	String cognome;
+	String username;
 	String email;
 	String password;
 	String indirizzo;

@@ -57,6 +57,11 @@
                                             <input type="text" id="name" placeholder="Inserisci cognome" name="cognome" required>
                                             <p id="cognomep" style="color:red; "></p>
                                         </div>
+                                        
+                                        <div class="single-acc-field">
+                                            <label for="username">Username</label>
+                                            <input type="text" id="username" placeholder="Inserisci username" name="username" required>
+                                        </div>
 
                                         <div class="single-acc-field">
                                             <label for="email">Email</label>

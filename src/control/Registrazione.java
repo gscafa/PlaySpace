@@ -40,6 +40,7 @@ public class Registrazione extends HttpServlet {
 	
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
+		String username = request.getParameter("username");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		String indirizzo = request.getParameter("indirizzo");
@@ -50,14 +51,15 @@ public class Registrazione extends HttpServlet {
 		con = DriverManagerConnectionPool.getConnection();
 		if(con != null)System.out.println("OH YEAH");
 		else System.out.println("OH NO");
-		PreparedStatement st = con.prepareStatement("insert into utente values(?,?,?,?,?,?,?,0)");
-		st.setString(1, email);
-		st.setString(2, password);
-		st.setString(3, nome);
-		st.setString(4, cognome);
-		st.setString(5, indirizzo);
-		st.setString(6, citta);
-		st.setString(7, dataNascita);
+		PreparedStatement st = con.prepareStatement("insert into utente values(?,?,?,?,?,?,?,?,0)");
+		st.setString(1, username);
+		st.setString(2, email);
+		st.setString(3, password);
+		st.setString(4, nome);
+		st.setString(5, cognome);
+		st.setString(6, indirizzo);
+		st.setString(7, citta);
+		st.setString(8, dataNascita);
 		st.executeUpdate();
 		con.commit();
 		DriverManagerConnectionPool.releaseConnection(con);
@@ -67,7 +69,7 @@ public class Registrazione extends HttpServlet {
 		}
 		
 		
-		//response.sendRedirect(request.getContextPath() + "/login.jsp");
+		response.sendRedirect(request.getContextPath() + "/login.jsp");
 	}
 
 	/**

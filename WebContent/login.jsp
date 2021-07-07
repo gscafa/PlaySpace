@@ -49,8 +49,8 @@ if (found==null) found = true;%>
                                     <form action="Login" method="post">
                                        
                                         <div class="single-acc-field">
-                                            <label for="email">Email</label>
-                                            <input type="email" id="email" placeholder="Inserisci email" name="email" required>
+                                            <label for="username">Username</label>
+                                            <input type="text" id="username" placeholder="Inserisci username" name="username" required>
                                         </div>
                                         <div class="single-acc-field">
                                             <label for="password">Password</label>
