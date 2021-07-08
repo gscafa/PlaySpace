@@ -10,9 +10,9 @@ $(document).ready(function (){
 				
 				var card = (" <div class='col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12'> "+
                    " <div class='single-tranding'> "+
-                      "  <a href='product-details.html'> "+
+                      "  <a href='prodotto.jsp'> "+
                          "   <div class='tranding-pro-img'> "+
-                               " <img src='assets/img/prodotti/"+current.idProdotto+".jpg' alt=''>"+ 
+                               " <img src='assets/img/prodotti/"+current.idProdotto+".jpg' style='width:403px;height:521px'>"+ 
                            " </div>"+
                             " <div class='tranding-pro-title'> "+
                                " <h3>"+current.nome+"</h3> "+
@@ -20,10 +20,13 @@ $(document).ready(function (){
                             "</div>"+
                             "<div class='tranding-pro-price'>"+
                                " <div class='price_box'>"+
-                                   " <span class='current_price'>€"+current.prezzo+"</span>"+    
+                                   " <span class='current_price'>€"+current.prezzo.toFixed(2)+"</span>"+    
                                 "</div>"+
                             "</div>"+
                        " </a>"+
+                       "<div class='search_box'>" +
+                                            "<button class='button'>Aggiungi al Carrello</button> "+
+                                        "</div><br><br>" +
                     "</div>"+
                 "</div>");
 						 
@@ -49,7 +52,7 @@ $(document).ready(function (){
                    " <div class='single-tranding'> "+
                       "  <a href='product-details.html'> "+
                          "   <div class='tranding-pro-img'> "+
-                               " <img src='assets/img/prodotti/"+current.idProdotto+".jpg' alt=''>"+ 
+                               " <img src='assets/img/prodotti/"+current.idProdotto+".jpg' style='width:403px;height:521px'>"+ 
                            " </div>"+
                             " <div class='tranding-pro-title'> "+
                                " <h3>"+current.nome+"</h3> "+
@@ -57,10 +60,13 @@ $(document).ready(function (){
                             "</div>"+
                             "<div class='tranding-pro-price'>"+
                                " <div class='price_box'>"+
-                                   " <span class='current_price'>€"+current.prezzo+"</span>"+    
+                                   " <span class='current_price'>€"+current.prezzo.toFixed(2)+"</span>"+    
                                 "</div>"+
                             "</div>"+
                        " </a>"+
+                       "<div class='search_box'>" +
+                       "<button class='button'>Aggiungi al Carrello</button> "+
+                   "</div><br><br>" +
                     "</div>"+
                 "</div>");
 						 
@@ -86,7 +92,7 @@ $(document).ready(function (){
                    " <div class='single-tranding'> "+
                       "  <a href='product-details.html'> "+
                          "   <div class='tranding-pro-img'> "+
-                               " <img src='assets/img/prodotti/"+current.idProdotto+".jpg' alt=''>"+ 
+                               " <img src='assets/img/prodotti/"+current.idProdotto+".jpg' style='width:403px;height:521px'>"+ 
                            " </div>"+
                             " <div class='tranding-pro-title'> "+
                                " <h3>"+current.nome+"</h3> "+
@@ -94,10 +100,13 @@ $(document).ready(function (){
                             "</div>"+
                             "<div class='tranding-pro-price'>"+
                                " <div class='price_box'>"+
-                                   " <span class='current_price'>€"+current.prezzo+"</span>"+    
+                                   " <span class='current_price'>€"+current.prezzo.toFixed(2)+"</span>"+    
                                 "</div>"+
                             "</div>"+
                        " </a>"+
+                       "<div class='search_box'>" +
+                       "<button class='button'>Aggiungi al Carrello</button> "+
+                   "</div><br><br>" +
                     "</div>"+
                 "</div>");
 						 
@@ -122,7 +131,7 @@ $(document).ready(function (){
                    " <div class='single-tranding'> "+
                       "  <a href='product-details.html'> "+
                          "   <div class='tranding-pro-img'> "+
-                               " <img src='assets/img/prodotti/"+current.idProdotto+".jpg' alt=''>"+ 
+                               " <img src='assets/img/prodotti/"+current.idProdotto+".jpg' style='width:403px;height:521px'>"+ 
                            " </div>"+
                             " <div class='tranding-pro-title'> "+
                                " <h3>"+current.nome+"</h3> "+
@@ -130,10 +139,13 @@ $(document).ready(function (){
                             "</div>"+
                             "<div class='tranding-pro-price'>"+
                                " <div class='price_box'>"+
-                                   " <span class='current_price'>€"+current.prezzo+"</span>"+    
+                                   " <span class='current_price'>€"+current.prezzo.toFixed(2)+"</span>"+    
                                 "</div>"+
                             "</div>"+
                        " </a>"+
+                       "<div class='search_box'>" +
+                       "<button class='button'>Aggiungi al Carrello</button> "+
+                   "</div><br><br>" +
                     "</div>"+
                 "</div>");
 						 
