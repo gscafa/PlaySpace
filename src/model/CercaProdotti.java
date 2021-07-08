@@ -12,9 +12,11 @@ public  class CercaProdotti {
 		try {
 			Connection con = DriverManagerConnectionPool.getConnection();
 			PreparedStatement st = con.prepareStatement("SELECT * FROM prodotto where categoria=?;");
+			st.setString(1, categoria);
+			con.commit();
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
-				id=rs.getInt("id");
+				id=rs.getInt("idprodotto");
 				n = rs.getString("nome");
 				d = rs.getString("descrizione");
 				p = rs.getString("piattaforma");
@@ -28,6 +30,9 @@ public  class CercaProdotti {
 		}
 		catch(Exception e) {
 			System.out.println(e);
+		}
+		for(Prodotto x : result) {
+			System.out.println(x.getNome());
 		}
 		return result;
 	}
