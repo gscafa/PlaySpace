@@ -25,8 +25,27 @@
 <body>
 <%@include file="header.jsp" %>
 
+<section class="pt-60 pb-30 gray-bg">
 
+<div class="container">
+            <div class="row">
+                <div class="col text-left">
+                    <div class="section-title">
+                        <h2>"nome utente preso da db"</h2>
+                        <br>
+                        <div class="col text-center"> 
+                        <iframe name="frame1" height="200" width="300">
+                        
+                        </iframe>
+                        </div>
+                        
+                    <a href="impostaDati.html" target="frame1"><h6>Modifica dati</h6></a>    
+                    </div>
+                </div>
+            </div>
+			
 
+</section>
 
 <%@include file="footer.jsp" %>
 </body>
