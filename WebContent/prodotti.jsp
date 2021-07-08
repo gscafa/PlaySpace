@@ -12,6 +12,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo_small_icon_only.png">
     
+    
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="mostraProdotti.js"></script>
     <!-- CSS 
     ========================= -->
    
@@ -28,20 +31,16 @@
 <body>
 
    <%@include file="header.jsp" %>
-   <script src="mostraProdotti.js"></script>
-   <button id="Sparatutto">ciao</button>
+   
 <section class="pt-60 pb-30 gray-bg">
         <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <div class="section-title">
-                        <h2>Tranding Products</h2>
-                    </div>
-                </div>
-            </div>
            
-               <div id="result"></div>
+            <div class="row justify-content-center" id="result">
+                
                
+               
+            </div>
+        </div>
     </section><!--Tranding product-->
 
    <%@include file="footer.jsp" %>
