@@ -32,6 +32,7 @@ public class MostraProdotti extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String key = request.getParameter("key");
+		System.out.println(key);
 		ArrayList<Prodotto> result = CercaProdotti.getProdotti(key);
 		String json = new Gson().toJson(result);
 		PrintWriter p = response.getWriter();
