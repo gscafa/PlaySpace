@@ -2,7 +2,7 @@ package model;
 
 public class CarrelloItem {
 
-	CarrelloItem(Prodotto p, int q){
+	public CarrelloItem(Prodotto p, int q){
 		prodotto = p;
 		quantita = q;
 	}

@@ -31,9 +31,7 @@ public  class CercaProdotti {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		for(Prodotto x : result) {
-			System.out.println(x.getNome());
-		}
+		
 		return result;
 	}
 	

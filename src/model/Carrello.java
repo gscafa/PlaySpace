@@ -7,11 +7,21 @@ public class Carrello {
 		prodotti = new ArrayList<CarrelloItem>();
 	}
 	
-	void addProdotto(CarrelloItem c) {
-		prodotti.add(c);
+	public void addProdotto(CarrelloItem c) {
+		boolean check = false;
+		for(CarrelloItem i : prodotti) {
+			if(i.getProdotto().getIdProdotto() == c.getProdotto().getIdProdotto()) {
+				i.incQuantita();
+				check = true;
+			}
+		}
+		
+		if(!check)
+			prodotti.add(c);
+		
 	}
 	
-	void removeProdotto(int id) {
+	public void removeProdotto(int id) {
 		for(CarrelloItem x : prodotti) {
 			if(x.prodotto.getIdProdotto() == id)
 				prodotti.remove(x);
