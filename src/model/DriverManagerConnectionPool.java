@@ -27,7 +27,7 @@ public class DriverManagerConnectionPool  {
 				+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true"
 				+ "&useLegacyDatetimeCode=false&serverTimezone=UTC";
 				String username = "root"; 
-				String pwd = "wescafa2000";
+				String pwd = "root";
 				newConnection = DriverManager.getConnection(url,username,pwd);
 				
 
