@@ -269,15 +269,15 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                             <div class="main_menu menu_position"> 
                                 <nav>  
                                     <ul>
-                                        <li><a href="index-2.html">home</a></li>
+                                        <li><a href="index.jsp">home</a></li>
                                         <li><a href="product-details.html">consoles</a></li>
                                         
-                                        <li><a class="active" href="#">categorie <i class="fa fa-angle-down"></i></a>
+                                        <li><a class="active" href="prodotti.jsp">categorie <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub_menu pages">
-                                                <li><a href="about.html">RPG</a></li>
-                                                <li><a href="contact.html">Sparatutto</a></li>
-                                                <li><a href="privacy-policy.html">Avventura</a></li>
-                                                <li><a href="faq.html">Sport</a></li>
+                                                <li><a href="#" id="RPG">RPG</a></li>
+                                                <li><a href="#" id="Sparatutto">Sparatutto</a></li>
+                                                <li><a href="#" id="Avventura">Avventura</a></li>
+                                                <li><a href="#" id="Sport">Sport</a></li>
                                                 
                                             </ul>
                                         </li>
