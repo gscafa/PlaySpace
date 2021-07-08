@@ -49,7 +49,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <%if(carrello != null){
+                            <%if(carrello != null || !carrello.isEmpty()){
                             for (CarrelloItem i : carrello.getProdotti()){
                             	
                             	%>
@@ -60,7 +60,7 @@
                                     <td class="product-price">€<%=String.format("%.2f",i.getProdotto().getPrezzo()) %></td>
                                     <td class="product_quantity"><%=i.getQuantita() %> </td>
                                     <td class="product_total">€<%=String.format("%.2f",i.getProdotto().getPrezzo() * i.getQuantita() )%></td>
-									<td class="product_remove"><a href="#"><i class="ion-android-close"></i></a></td>
+									<td class="product_remove"><a href="AggiungiCarrello?id=<%=i.getProdotto().getIdProdotto()%>&remove=yes"><i class="ion-android-close"></i></a></td>
                                 </tr>
 
                                <%}} %>

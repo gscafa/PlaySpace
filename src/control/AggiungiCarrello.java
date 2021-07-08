@@ -29,11 +29,15 @@ public class AggiungiCarrello extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		int id = Integer.parseInt(request.getParameter("id"));
+		String remove = request.getParameter("remove");
 		System.out.println(id);
 		Carrello carrello=(Carrello)session.getAttribute("carrello");
 		if(carrello == null)
 			carrello = new Carrello();
-		carrello.addProdotto(new CarrelloItem(PrendiProdotto.searchProdotto(id),1));
+		if(remove==null)
+			carrello.addProdotto(new CarrelloItem(PrendiProdotto.searchProdotto(id),1));
+		else
+		carrello.removeProdotto(id);
 	
 		session.setAttribute("carrello", carrello);
 		response.sendRedirect("carrello.jsp");
