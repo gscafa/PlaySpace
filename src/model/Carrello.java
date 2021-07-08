@@ -44,6 +44,12 @@ public class Carrello {
 			return true;
 		else return false;
 	}
+	
+	public void empty() {
+		for(CarrelloItem i: prodotti) {
+			prodotti.remove(i);
+		}
+	}
 	ArrayList<CarrelloItem> prodotti;
 	
 }
