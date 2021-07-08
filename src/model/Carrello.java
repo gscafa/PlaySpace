@@ -20,12 +20,29 @@ public class Carrello {
 			prodotti.add(c);
 		
 	}
+	public ArrayList<CarrelloItem> getProdotti(){
+		return prodotti;
+	}
 	
 	public void removeProdotto(int id) {
 		for(CarrelloItem x : prodotti) {
 			if(x.prodotto.getIdProdotto() == id)
 				prodotti.remove(x);
 		}
+	}
+	
+	public double getTotal() {
+		double t=0;
+		for(CarrelloItem i: prodotti) {
+			t+=(i.getQuantita() * i.getProdotto().getPrezzo());
+		}
+		return t;
+	}
+	
+	public boolean isEmpty() {
+		if(prodotti.size()==0)
+			return true;
+		else return false;
 	}
 	ArrayList<CarrelloItem> prodotti;
 	
