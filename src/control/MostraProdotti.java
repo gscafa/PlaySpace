@@ -36,7 +36,7 @@ public class MostraProdotti extends HttpServlet {
 		String json = new Gson().toJson(result);
 		PrintWriter p = response.getWriter();
 		 response.setContentType("application/json");
-		p.write(json);
+		p.write(json);//wewe
 	}
 
 	/**
