@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" session="true" import="model.Utente"%>
+    pageEncoding="UTF-8" session="true" import="model.Utente" import="model.Carrello"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +23,12 @@ Boolean logged = (Boolean) session.getAttribute("logged");
   if(logged==null) logged = false;
   Boolean admin = (Boolean) session.getAttribute("admin");
   if(admin == null) admin = false;
+ int q;
+ if(session.getAttribute("q") ==null)
+	 q=0;
+ else q = (int)session.getAttribute("q");
+ 
+ 
  
 %>  
  <!--header area start-->
@@ -63,7 +69,7 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                             </div>
                             <div class="mini_cart_wrapper">
                                 <a href="carrello.jsp"><img src="assets/img/shopping-bag.png" alt=""></a>
-                                <span class="cart_quantity">1</span>
+                                <span class="cart_quantity"><%=q %></span>
                                 <!--mini cart-->
                                 
                                  
@@ -149,7 +155,7 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                                     </div>
                                     <div class="mini_cart_wrapper">
                                         <a href="carrello.jsp"><img src="assets/img/shopping-bag.png" alt=""></a>
-                                        <span class="cart_quantity">1</span>
+                                        <span class="cart_quantity"><%=q %></span>
                                         <!--mini cart-->
                                          <div class="mini_cart">
                                             <div class="cart_item">

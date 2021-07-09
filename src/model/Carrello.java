@@ -40,6 +40,15 @@ public class Carrello {
 		return t;
 	}
 	
+	public int getTotalQuantity() {
+		if(this.isEmpty()) return 0;
+		int q=0;
+		for(CarrelloItem i : prodotti) {
+			q+=i.getQuantita();
+		}
+		return q;
+	}
+	
 	public boolean isEmpty() {
 		if(prodotti.size()==0)
 			return true;

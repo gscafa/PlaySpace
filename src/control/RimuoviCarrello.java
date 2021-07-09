@@ -32,7 +32,7 @@ public class RimuoviCarrello extends HttpServlet {
 				
 		Carrello carrello = (Carrello)session.getAttribute("carrello");
 		carrello.removeProdotto(id);
-		
+		session.setAttribute("q", carrello.getTotalQuantity());
 		session.setAttribute("carrello", carrello);
 		response.sendRedirect("carrello.jsp");
 		

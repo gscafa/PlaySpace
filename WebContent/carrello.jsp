@@ -66,10 +66,11 @@
                                <%}} %>
                             </tbody>
                         </table>   
-                            </div>  
-                            <div class="cart_submit">
-                                <button type="submit">Aggiorna Carrello</button>
+                         <div class="cart_submit">
+                                <a href="SvuotaCarrello"><button type="submit">Svuota carrello</button></a>
                             </div>      
+                            </div>  
+                             
                         </div>
                     </div>
                 </div>
@@ -93,7 +94,12 @@
                                     <%} %>
                                 </div>
                                 <div class="checkout_btn">
-                                    <a href="#">Vai all'acquisto</a>
+                                <%if (logged) {%>
+                                    <a href="checkout">Vai all'acquisto</a>
+                                    <%} else{%>
+                                     <a href="login.jsp">Vai all'acquisto</a>
+                                     <%} %>
+                                    
                                 </div>
                                 </div>
                             </div>

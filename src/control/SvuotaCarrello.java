@@ -1,5 +1,5 @@
 package control;
-import model.*;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,17 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Carrello;
+
 /**
- * Servlet implementation class AggiungiCarrello
+ * Servlet implementation class SvuotaCarrello
  */
-@WebServlet("/AggiungiCarrello")
-public class AggiungiCarrello extends HttpServlet {
+@WebServlet("/SvuotaCarrello")
+public class SvuotaCarrello extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AggiungiCarrello() {
+    public SvuotaCarrello() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,20 +30,13 @@ public class AggiungiCarrello extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		int id = Integer.parseInt(request.getParameter("id"));
-		int q = Integer.parseInt(request.getParameter("quantita"));
 		
-		System.out.println(id);
-		Carrello carrello=(Carrello)session.getAttribute("carrello");
-		if(carrello == null)
-			carrello = new Carrello();
+		Carrello carrello = (Carrello)session.getAttribute("carrello");
+		carrello.empty();
+		session.setAttribute("q", carrello.getTotalQuantity());
+		session.setAttribute("carrello", carrello);
+		response.sendRedirect("carrello.jsp");
 		
-			carrello.addProdotto(new CarrelloItem(PrendiProdotto.searchProdotto(id),q));
-		
-			
-			session.setAttribute("q", carrello.getTotalQuantity());
-			session.setAttribute("carrello", carrello);
-			response.sendRedirect("carrello.jsp");
 	}
 
 	/**
