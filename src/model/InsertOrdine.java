@@ -3,7 +3,7 @@ import java.sql.*;
 public class InsertOrdine {
 
 	public static void insertOrdine(Ordine ordine, String user) {
-		String ord = "insert into ordine values(?,?,22);";
+		String ord = "insert into ordine values(?,?,22,?);";
 		String eff = "insert into effettuazione values (?,?)";
 		String prod = "insert into prodotto_ordine values(?,?,?,?,?,?);";
 		String comp = "insert into composto values(?,?);";
@@ -15,6 +15,7 @@ public class InsertOrdine {
 			PreparedStatement st4 = con.prepareStatement(eff);
 			st1.setInt(1,ordine.getIdOrdine());
 			st1.setString(2, ordine.getData().toString());
+			st1.setDouble(3, ordine.getTotale());
 			st1.executeUpdate();
 			
 			st4.setString(1, user);

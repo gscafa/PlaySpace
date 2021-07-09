@@ -4,17 +4,28 @@ import java.util.*;
 
 public class Ordine {
 	
-	public Ordine(int id, LocalDate d, ArrayList<OrdineItem> a) {
+	public Ordine(int id, LocalDate d, ArrayList<OrdineItem> a, double t) {
 		prodotti = a;
 		data = d;
 		idOrdine = id;
+		totale = t;
 	}
+	
 	
 	public Ordine () {
 		idOrdine = MaxOrdine.getMaxOrdine() + 1;
 		prodotti = new ArrayList<OrdineItem>();
 		data = LocalDate.now();
 	}
+	
+	public double getTotale() {
+		return totale;
+	}
+
+	public void setTotale(double totale) {
+		this.totale = totale;
+	}
+
 	
 	public ArrayList<OrdineItem> getProdotti() {
 		return prodotti;
@@ -46,6 +57,7 @@ public class Ordine {
 	
 	public void carrelloToOrdine(Carrello c){
 		ArrayList<CarrelloItem> a = c.getProdotti();
+		totale = c.getTotal();
 		OrdineItem temp;
 		Prodotto ptemp;
 		int id;
@@ -65,5 +77,5 @@ public class Ordine {
 	ArrayList<OrdineItem> prodotti;
 	int idOrdine;
 	LocalDate data;
-	
+	double totale;
 }
