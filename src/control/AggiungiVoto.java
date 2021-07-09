@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class AggiungiCarrello
+ * Servlet implementation class AggiungiVoto
  */
-@WebServlet("/AggiungiCarrello")
-public class AggiungiCarrello extends HttpServlet {
+@WebServlet("/AggiungiVoto")
+public class AggiungiVoto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AggiungiCarrello() {
+    public AggiungiVoto() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,21 +27,16 @@ public class AggiungiCarrello extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String user = request.getParameter("user");
+		int voto = Integer.parseInt(request.getParameter("voto"));
+		int id = Integer.parseInt(request.getParameter("prod"));
+		UpdateVoto.updateVoto(id, user, voto);
+		Prodotto p = PrendiProdotto.searchProdotto(id);
+		
 		HttpSession session = request.getSession();
-		int id = Integer.parseInt(request.getParameter("id"));
-		int q = Integer.parseInt(request.getParameter("quantita"));
+		session.setAttribute("prodotto", p);
+		response.sendRedirect("dettagliProdotto.jsp");
 		
-		System.out.println(id);
-		Carrello carrello=(Carrello)session.getAttribute("carrello");
-		if(carrello == null)
-			carrello = new Carrello();
-		
-			carrello.addProdotto(new CarrelloItem(PrendiProdotto.searchProdotto(id),q));
-		
-			
-			
-			session.setAttribute("carrello", carrello);
-			response.sendRedirect("carrello.jsp");
 	}
 
 	/**

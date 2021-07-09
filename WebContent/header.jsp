@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" session="true"%>
+    pageEncoding="UTF-8" session="true" import="model.Utente"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +23,7 @@ Boolean logged = (Boolean) session.getAttribute("logged");
   if(logged==null) logged = false;
   Boolean admin = (Boolean) session.getAttribute("admin");
   if(admin == null) admin = false;
+ 
 %>  
  <!--header area start-->
     <!--Offcanvas menu area start-->

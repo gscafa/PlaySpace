@@ -23,7 +23,11 @@
 </head>
 
 <body>
-<%Prodotto p = (Prodotto)session.getAttribute("prodotto"); %>
+<%Prodotto p = (Prodotto)session.getAttribute("prodotto"); 
+
+Utente user = (Utente) session.getAttribute("user");
+
+ %>
  
 <%@include file="header.jsp" %>
 
@@ -42,17 +46,14 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="product_d_right">
-                       <form action="#">
                            
                             <h1><%=p.getNome() %></h1>
+                            <h4><%=p.getPiattaforma() %></h4>
                             <div class=" product_ratting">
                                 <ul>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                   
+                                    <%for (int i=0; i< (int)p.getVotoMedio();i++){ %>
+                                    <li><i class="fa fa-star"></i></li>
+                                   <%} %>
                                 </ul>
                                 
                             </div>
@@ -68,25 +69,26 @@
                                 </ul>
                             </div>
 							
-                            
+                            <form action="AggiungiCarrello">
                             <div class="product_variant quantity">
                                 <label>Quantita'</label>
-                                <input min="1" max="100" value="1" type="number">
+                                <input min="1" max="100" value="1" type="number" name="quantita">
+                                <input type="hidden" name="id" value="<%=p.getIdProdotto() %>">
                                 <button class="button" type="submit">Aggiungi al carrello</button>  
-                                
                             </div>
-                            
+                            </form>
+                            <%if (logged) {%>
+                            <form action="AggiungiVoto" method="post"> 
                              <div class="product_variant quantity">
                                 <label>Voto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                <input min="1" max="5" value="1" type="number">
+                                <input min="1" max="5" value="1" type="number" name="voto">
+                                <input type="hidden" value="<%=user.getUsername()%>" name="user">
+                                <input type="hidden" value="<%=p.getIdProdotto() %>" name="prod">
                                 <button class="button" type="submit">Invia voto</button>  
                                 
                             </div>
-                           
-                          
-                            
                         </form>
-                       
+                       <%} %>
 
                     </div>
                 </div>

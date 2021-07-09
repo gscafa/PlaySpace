@@ -21,10 +21,11 @@ public class CarrelloItem {
 		this.quantita = quantita;
 	}
 
-	public void incQuantita() {
-		quantita++;
+	public void incQuantita(int q) {
+		quantita+=q;
 	}
-
+	
+	
 	
 	
 	public void decQuantita() {

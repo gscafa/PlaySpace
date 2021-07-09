@@ -25,7 +25,7 @@ $(document).ready(function (){
                             "</div>"+
                        " </a>"+
                        "<div class='search_box'>" +
-                                            "<a href='AggiungiCarrello?id="+current.idProdotto+"'<button class='button'>Aggiungi al Carrello</button></a> "+
+                                            "<a href='AggiungiCarrello?id="+current.idProdotto+"&quantita=1'<button class='button'>Aggiungi al Carrello</button></a> "+
                                         "</div><br><br>" +
                     "</div>"+
                 "</div>");
@@ -65,7 +65,7 @@ $(document).ready(function (){
                             "</div>"+
                        " </a>"+
                        "<div class='search_box'>" +
-                       "<a href='AggiungiCarrello?id="+current.idProdotto+"'<button class='button'>Aggiungi al Carrello</button></a>"+
+                       "<a href='AggiungiCarrello?id="+current.idProdotto+"&quantita=1'<button class='button'>Aggiungi al Carrello</button></a>"+
                    "</div><br><br>" +
                     "</div>"+
                 "</div>");
@@ -105,7 +105,7 @@ $(document).ready(function (){
                             "</div>"+
                        " </a>"+
                        "<div class='search_box'>" +
-                       "<a href='AggiungiCarrello?id="+current.idProdotto+"'<button class='button'>Aggiungi al Carrello</button></a>"+
+                       "<a href='AggiungiCarrello?id="+current.idProdotto+"&quantita=1'<button class='button'>Aggiungi al Carrello</button></a>"+
                    "</div><br><br>" +
                     "</div>"+
                 "</div>");
@@ -144,7 +144,7 @@ $(document).ready(function (){
                             "</div>"+
                        " </a>"+
                        "<div class='search_box'>" +
-                       "<a href='AggiungiCarrello?id="+current.idProdotto+"'<button class='button'>Aggiungi al Carrello</button></a>"+
+                       "<a href='AggiungiCarrello?id="+current.idProdotto+"&quantita=1'<button class='button'>Aggiungi al Carrello</button></a>"+
                    "</div><br><br>" +
                     "</div>"+
                 "</div>");

@@ -11,7 +11,7 @@ public class Carrello {
 		boolean check = false;
 		for(CarrelloItem i : prodotti) {
 			if(i.getProdotto().getIdProdotto() == c.getProdotto().getIdProdotto()) {
-				i.incQuantita();
+				i.incQuantita(c.getQuantita());
 				check = true;
 			}
 		}
@@ -26,8 +26,9 @@ public class Carrello {
 	
 	public void removeProdotto(int id) {
 		for(CarrelloItem x : prodotti) {
-			if(x.prodotto.getIdProdotto() == id)
+			if(x.getProdotto().getIdProdotto() == id) {
 				prodotti.remove(x);
+				break;}
 		}
 	}
 	
