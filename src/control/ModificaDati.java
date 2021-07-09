@@ -58,18 +58,14 @@ public class ModificaDati extends HttpServlet {
 		
 		st.setString(3, email);
 		
-		String username = (String) session.getAttribute("user");
-		
-		st.setString(4, username);
-		
-		ResultSet rs = st.executeQuery();
+		Utente utente = (Utente) session.getAttribute("utente");
 		
 		
-		if(rs.next()) {
-			
-			found = true;
+		
+		st.setString(4, utente.getUsername());
+		
+		st.executeUpdate();
 
-		}
 	}
 		
 		catch(Exception e) {
