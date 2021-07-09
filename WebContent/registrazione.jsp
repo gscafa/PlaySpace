@@ -141,7 +141,7 @@ function checkPhonenumber(inputtxt) {
 }
 
 function checkPassword(inputtxt){
-	var pw = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8, 20}$/;
+	var pw = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 	if(inputtxt.value.match(pw))
 		return true;
 	return false;

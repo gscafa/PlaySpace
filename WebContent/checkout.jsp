@@ -25,11 +25,13 @@
 </head>
 
 <body>
-
- 
 <%@include file="header.jsp" %>
-<%Carrello carrello = (Carrello)session.getAttribute("carrello"); %>
 
+
+
+<%Carrello carrello = (Carrello)session.getAttribute("carrello"); %>
+<br><br>
+<h1 style="text-align:center">Riepilogo Ordine</h1>
  <div class="shopping_cart_area mt-60">
         <div class="container">  
              
@@ -66,9 +68,7 @@
                                <%}} %>
                             </tbody>
                         </table>   
-                         <div class="cart_submit">
-                                <a href="SvuotaCarrello"><button type="submit">Svuota carrello</button></a>
-                            </div>      
+                           
                             </div>  
                              
                         </div>
@@ -94,11 +94,11 @@
                                     <%} %>
                                 </div>
                                 <div class="checkout_btn">
-                                <%if (logged) {%>
-                                    <a href="checkout.jsp">Vai all'acquisto</a>
-                                    <%} else{%>
-                                     <a href="login.jsp">Vai all'acquisto</a>
-                                     <%} %>
+                                
+                                    <a href="Checkout">Conferma Acquisto</a>
+                                    
+                                     
+                                     
                                     
                                 </div>
                                 </div>
@@ -110,11 +110,10 @@
             
         </div>     
     </div>
-    <!--shopping cart area end -->
+
 
 
 
 <%@include file="footer.jsp" %>
-
 </body>
 </html>
