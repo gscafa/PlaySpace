@@ -58,7 +58,7 @@ public class ModificaDati extends HttpServlet {
 		
 		st.setString(3, email);
 		
-		Utente utente = (Utente) session.getAttribute("utente");
+		Utente utente = (Utente) session.getAttribute("user");
 		
 		
 		

@@ -13,6 +13,8 @@ public class GetStoricoOrdini {
 			Connection con = DriverManagerConnectionPool.getConnection();
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, user);
+			ResultSet rs = st.executeQuery();
+			
 			
 		}
 		catch(Exception e) {
