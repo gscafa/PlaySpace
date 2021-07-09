@@ -49,7 +49,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <%if(carrello != null || !carrello.isEmpty()){
+                            <%if(carrello != null && !carrello.isEmpty()){
                             for (CarrelloItem i : carrello.getProdotti()){
                             	
                             	%>
@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="checkout_btn">
                                 <%if (logged) {%>
-                                    <a href="checkout">Vai all'acquisto</a>
+                                    <a href="Checkout">Vai all'acquisto</a>
                                     <%} else{%>
                                      <a href="login.jsp">Vai all'acquisto</a>
                                      <%} %>

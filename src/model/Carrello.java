@@ -56,9 +56,7 @@ public class Carrello {
 	}
 	
 	public void empty() {
-		for(CarrelloItem i: prodotti) {
-			prodotti.remove(i);
-		}
+		prodotti.clear();
 	}
 	ArrayList<CarrelloItem> prodotti;
 	
