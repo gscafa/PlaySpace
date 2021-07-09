@@ -4,9 +4,15 @@ import java.util.*;
 
 public class Ordine {
 	
-	public Ordine(int id, LocalDate d, ArrayList<OrdineItem> a, double t) {
+	public Ordine(int id, String d, ArrayList<OrdineItem> a, double t) {
 		prodotti = a;
-		data = d;
+		data = LocalDate.parse(d);
+		idOrdine = id;
+		totale = t;
+	}
+	
+	public Ordine(int id, String d, double t) {
+		data = LocalDate.parse(d);
 		idOrdine = id;
 		totale = t;
 	}

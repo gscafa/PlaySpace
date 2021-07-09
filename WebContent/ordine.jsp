@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" session="true" import="model.Carrello" import="model.CarrelloItem" 
-    import="model.Ordine" import="java.util.ArrayList"%>
+    import="model.OrdineItem" import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +26,11 @@
 </head>
 
 <body>
-<%ArrayList<Ordine> ordini =(ArrayList<Ordine>) session.getAttribute("ordini"); %>
+<%ArrayList<OrdineItem> prodotti =(ArrayList<OrdineItem>) session.getAttribute("prodOrdine"); %>
  
 <%@include file="header.jsp" %>
-<br><br>
-<H1 style="text-align:center">Storico Ordini</H1>
+
+
 <div class="shopping_cart_area mt-60">
         <div class="container">  
              
@@ -41,40 +41,38 @@
                                 <table>
                             <thead>
                                 <tr>
-                                    <th class="product_thumb">Data</th>
-                                    <th class="product_name">Totale</th>
-                                    <th class="product_name">Visualizza</th>
+                                    <th class="product_thumb">Immagine</th>
+                                    <th class="product_name">Prodotto</th>
+                                    <th class="product-price">Prezzo</th>
+                                    <th class="product_quantity">Quantita'</th>
+                                    <th class="product_total">Totale</th>
                                     
                                 </tr>
                             </thead>
                             <tbody>
-                            <%if(ordini != null){
-                            for (Ordine i : ordini){ %>
+                            <%if(prodotti!=null){
+                            for (OrdineItem i : prodotti){
+                            	
+                            	%>
                             
                                 <tr>
-                                    <td class="product_thumb"><%=i.getData() %></td>
-                                    <td class="product_name">€<%=String.format("%.2f",i.getTotale())%></td>
-                                    <td class="product_name"><a href="VisualizzaOrdine?id=<%=i.getIdOrdine()%>">Visualizza</a></td>
+                                    <td class="product_thumb"><img src="<%=i.getPath() %>" alt=""></td>
+                                    <td class="product_name"><a href="#"><%=i.getNome() %></a></td>
+                                    <td class="product-price">€<%=String.format("%.2f",i.getPrezzo()) %></td>
+                                    <td class="product_quantity"><%=i.getQuantita() %> </td>
+                                    <td class="product_total">€<%=String.format("%.2f",i.getPrezzo() * i.getQuantita() )%></td>
                                 </tr>
-								<%} }%>
-                              
+
+                               <%}} %>
                             </tbody>
                         </table>   
-                          
+                             
                             </div>  
                              
                         </div>
                     </div>
                 </div>
-                <!--coupon code area start-->
-               
-                <!--coupon code area end-->
-            
-        </div>     
-    </div>
-
 
 <%@include file="footer.jsp" %>
-
 </body>
 </html>
