@@ -39,6 +39,7 @@ public class ModificaDati extends HttpServlet {
 		String user = request.getParameter("username");
 		String passwordv = request.getParameter("passwordv");
 		String passwordn = request.getParameter("passwordn");
+		String email = request.getParameter("email");
 		
 		boolean a=false;
 		boolean found = false;
@@ -46,35 +47,42 @@ public class ModificaDati extends HttpServlet {
 		session.setAttribute("logged", true);
 		try {
 		Connection con = DriverManagerConnectionPool.getConnection();
-		PreparedStatement st = con.prepareStatement("select * from utente where username = ? and password = ?;");
+		PreparedStatement st = con.prepareStatement("update utente set username = ?, password = ?, email = ? where username = ?;");
 		st.setString(1, user);
-		st.setString(2, passwordv);
+		
+		if(!passwordv.equals(passwordn)) {
+			
+		st.setString(2, passwordn);
+		
+		}
+		
+		st.setString(3, email);
+		
+		String username = (String) session.getAttribute("user");
+		
+		st.setString(4, username);
 		
 		ResultSet rs = st.executeQuery();
-		
 		
 		
 		if(rs.next()) {
 			
 			found = true;
 
-			rs.updateObject(0, user);
-			if(passwordv == rs.getObject(3))
-				rs.updateObject(3, passwordn);
-		
 		}
 	}
 		
 		catch(Exception e) {
 			System.out.println(e);
 		}
+		
 		/*if(found) {
 			
 			
 			session.setAttribute("user", user);
 			if(user != null) 
 				session.setAttribute("logged", true);
-			if(a)
+			if(a) {
 				session.setAttribute("admin", true);
 			session.setAttribute("userFound", true);
 			request.getRequestDispatcher("index.jsp").forward(request,response);
@@ -87,6 +95,8 @@ public class ModificaDati extends HttpServlet {
 			*/
 	
 	}
+		
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
