@@ -27,10 +27,9 @@
 </head>
 <body>
 
-<%@ include file="header1.jsp" %>
+<%@ include file="header.jsp" %>
+<%Utente utente = (Utente)session.getAttribute("user"); %> 
 
-<%Boolean found = (Boolean) session.getAttribute("userFound"); 
-if (found==null) found = true;%>
  
 <section class="account">
         <div class="container">
@@ -39,10 +38,7 @@ if (found==null) found = true;%>
                                 <div class="account-content">
                                     <form action="ModificaDati" method="post">
                                        
-                                        <div class="single-acc-field">
-                                            <label for="username">Nuovo username</label>
-                                            <input type="text" id="username" placeholder="Inserisci username" name="username" required>
-                                        </div>
+                                       
                                         <div class="single-acc-field">
                                             <label for="password">Vecchia password</label>
                                             <input type="password" id="passwordv" placeholder="Inserisci vecchia password" name="passwordv" required>
@@ -55,22 +51,17 @@ if (found==null) found = true;%>
                                             <label for="username">Nuova email</label>
                                             <input type="email" id="email" placeholder="Inserisci email" name="email" required>
                                         </div>
-                                        <%if(!found) {%>
-										<div class="single-acc-field">
-                                            <h4 style="color:red;">Email e/o password errati, riprova</h4>
-                                        </div>
-                                        <%} %>
+                                        <input type="hidden" value="<%=utente.getUsername() %>" name="user">
+                                       
                                         <div class="single-acc-field">
                                             <button type="submit">Modifica</button>
-                                        
+                                        </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+             
     </section>
 </body>
 

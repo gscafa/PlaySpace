@@ -1,5 +1,5 @@
 package control;
-
+import model.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -36,59 +36,15 @@ public class ModificaDati extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		String user = request.getParameter("username");
+		
 		String passwordv = request.getParameter("passwordv");
 		String passwordn = request.getParameter("passwordn");
 		String email = request.getParameter("email");
+		String user = request.getParameter("user");
+		if(CheckPassword.checkPassword(user, passwordv))
+			UpdateUtente.updateUtente(user, passwordn, email);
 		
-		boolean a=false;
-		boolean found = false;
-		HttpSession session = request.getSession();
-		session.setAttribute("logged", true);
-		try {
-		Connection con = DriverManagerConnectionPool.getConnection();
-		PreparedStatement st = con.prepareStatement("update utente set username = ?, password = ?, email = ? where username = ?;");
-		st.setString(1, user);
-		
-		if(!passwordv.equals(passwordn)) {
-			
-		st.setString(2, passwordn);
-		
-		}
-		
-		st.setString(3, email);
-		
-		Utente utente = (Utente) session.getAttribute("user");
-		
-		
-		
-		st.setString(4, utente.getUsername());
-		
-		st.executeUpdate();
-
-	}
-		
-		catch(Exception e) {
-			System.out.println(e);
-		}
-		
-		/*if(found) {
-			
-			
-			session.setAttribute("user", user);
-			if(user != null) 
-				session.setAttribute("logged", true);
-			if(a) {
-				session.setAttribute("admin", true);
-			session.setAttribute("userFound", true);
-			request.getRequestDispatcher("index.jsp").forward(request,response);
-			}
-			else {
-				session.setAttribute("userFound", false);
-				request.getRequestDispatcher("login.jsp").forward(request,response);
-			}
-			
-			*/
+		response.sendRedirect("utente.jsp");
 	
 	}
 		
