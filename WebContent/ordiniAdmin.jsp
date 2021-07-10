@@ -36,7 +36,7 @@
                             <div class="main_menu menu_position"> 
                                 <nav>  
                                     <ul>
-                                        <li><a href="#" id="prodotti">Visualizza prodotti</a></li>
+                                        <li><a href="admin.jsp" id="prodotti">Visualizza prodotti</a></li>
                                         <li><a href="#" id="aggiungi">Aggiungi prodotto</a></li>
                                         <li><a href="TuttiOrdini" id="ordini">Visualizza Ordini</a></li>
 

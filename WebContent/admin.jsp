@@ -29,9 +29,10 @@
 
 <body>
 
- 
 <%@include file="header.jsp" %>
 
+<%if(admin==false ) 
+	response.sendRedirect("login.jsp");%>
   <div class="main_menu_area" style="background-color:red">
                 <div class="container">
                     <div class="row justify-content-center">

@@ -31,8 +31,9 @@ public class ModificaProdotto extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		String descrizione = request.getParameter("descrizione");
 		double prezzo = Double.parseDouble(request.getParameter("prezzo"));
+		String nome = request.getParameter("nome");
 		
-		UpdateProdotto.updateProdotto(id, prezzo, descrizione);
+		UpdateProdotto.updateProdotto(id, prezzo, descrizione,nome);
 		response.sendRedirect("admin.jsp");
 	}
 

@@ -175,7 +175,7 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                                 <nav>  
                                     <ul>
                                         <li><a href="index.jsp">home</a></li>
-                                        <li><a href="product-details.html">consoles</a></li>
+                                        
                                         
                                         <li><a class="active" href="prodotti.jsp">categorie <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub_menu pages">

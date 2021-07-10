@@ -27,9 +27,15 @@
 </head>
 
 <body>
-<%Utente utente = (Utente)session.getAttribute("user"); %>
+
  
 <%@include file="header.jsp" %>
+
+<%if(logged==false || logged==null) 
+	response.sendRedirect("login.jsp");
+	else{%>
+	
+	<%Utente utente = (Utente)session.getAttribute("user"); %>
   <div class="main_menu_area" style="background-color:red">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -55,7 +61,7 @@
               <h4>Nome</h4>
                <h4>Nome</h4>
                </div>
-            
+            <%} %>
             
 <%@include file="footer.jsp" %>
 
