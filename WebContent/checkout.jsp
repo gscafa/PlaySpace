@@ -29,7 +29,8 @@
 
 
 
-<%Carrello carrello = (Carrello)session.getAttribute("carrello"); %>
+<%Carrello carrello = (Carrello)session.getAttribute("carrello"); 
+Utente utente = (Utente)session.getAttribute("user");%>
 <br><br>
 <h1 style="text-align:center">Riepilogo Ordine</h1>
  <div class="shopping_cart_area mt-60">
@@ -47,7 +48,6 @@
                                     <th class="product-price">Prezzo</th>
                                     <th class="product_quantity">Quantita'</th>
                                     <th class="product_total">Totale</th>
-                                    <th class="product_remove">Rimuovi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,7 +62,6 @@
                                     <td class="product-price">€<%=String.format("%.2f",i.getProdotto().getPrezzo()) %></td>
                                     <td class="product_quantity"><%=i.getQuantita() %> </td>
                                     <td class="product_total">€<%=String.format("%.2f",i.getProdotto().getPrezzo() * i.getQuantita() )%></td>
-									<td class="product_remove"><a href="RimuoviCarrello?id=<%=i.getProdotto().getIdProdotto()%>"><i class="ion-android-close"></i></a></td>
                                 </tr>
 
                                <%}} %>
@@ -74,13 +73,13 @@
                         </div>
                     </div>
                 </div>
-                <!--coupon code area start-->
+                
                 <div class="coupon_area">
                     <div class="row">
                         
                         <div class="col-lg-6 col-md-6">
                             <div class="coupon_code right">
-                                <h3>Totale</h3>
+                                <h3>Riepilogo</h3>
                                 <div class="coupon_inner">
                                
                                 
@@ -92,24 +91,135 @@
                                     <%}else{ %>
                                     <p class="cart_amount">€<%=String.format("%.2f",carrello.getTotal())%></p>
                                     <%} %>
+                                    
+                                    <p>Spedizione a:</p>
+                                    <p><%=utente.getIndirizzo() + ", "+utente.getCitta() %>
                                 </div>
-                                <div class="checkout_btn">
                                 
-                                    <a href="Checkout">Conferma Acquisto</a>
-                                    
-                                     
-                                     
-                                    
-                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <h3 align="center">Dati di Pagamento</h3>
+                  
+        <div class="container">
+            <div class="row justify-content-center">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <div class="account-content">
+                                  
+                                       <form action="Checkout" method="post" onsubmit="event.preventDefault(); validate(this)">
+                                        <div class="single-acc-field">
+                                            <label for="numerocarta">Numero Carta</label>
+                                            <input type="text" id="numerocarta" placeholder="Numero Carta" name="numerocarta" required>
+                                        	<p id="numerop" style="color:red"></p>
+                                        </div>
+                                        <div class="single-acc-field">
+                                            <label for="scadenza">Data Di Scadenza</label>
+                                            <input type="date" id="scadenza"  name="scadenza" required>
+                                            <p id="scadenzap" style="color:red"></p>
+                                        </div>
+                                        
+                                        <div class="single-acc-field">
+                                            <label for="intest">Intestatario</label>
+                                            <input type="text" id="intest" placeholder="Nome intestatario" name="intest" required>
+                                        <p id="nomep" style="color:red"></p>
+                                        </div>
+                                        
+                                        
+                                        <div class="single-acc-field">
+                                
+                                   <button type="submit">Conferma Acquisto</button>
+                                   
+                                    
+                                </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+                
+                
+                
+                <script>
+ function checkNamesurname(inputtxt) {
+ 	var name = /^[A-Za-z]+$/;
+	if(inputtxt.value.match(name)) 
+		return true;
+
+	return false;	
+                }
+
+
+function checkCarta(inputtxt) {
+	var phoneno = /^([0-9]{16})$/;
+	if(inputtxt.value.match(phoneno)) 
+		return true;
+	
+	return false;
+}
+
+function checkPassword(inputtxt){
+	var pw = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+	if(inputtxt.value.match(pw))
+		return true;
+	return false;
+}
+
+function checkDate(inputDate){
+	var now = new Date().toJSON().slice(0, 10);
+	// get date from input field, by default is "YYYY-MM-DD" format
+	var b = document.getElementById('scadenza').value;
+	if(b<now) return false;
+	else return true;
+
+}
+
+function validate(obj) {	
+	var valid = true;	
+	
+	var numero = document.getElementsByName("numerocarta")[0];
+	if(!checkCarta(numero)) {
+		valid = false;
+		
+		document.getElementById("numerop").innerHTML = "Formato non corretto";
+	} else {
+		
+		document.getElementById("numerop").innerHTML = "";
+	}
+	
+	var surname = document.getElementsByName("intest")[0];
+	if(!checkNamesurname(surname)) {
+		valid = false;
+		document.getElementById("nomep").innerHTML = "Formato non corretto";
+	} else {
+		document.getElementById("nomep").innerHTML = "";
+	}
+	
+	var data = document.getElementsByName("scadenza")[0];
+	if(!checkDate(data)) {
+		valid = false;
+		document.getElementById("scadenzap").innerHTML = "Data di Scadenza Superata";
+	} else {
+		document.getElementById("scadenzap").innerHTML = "";
+	}
+	
+	
+	
+	if(valid) obj.submit();
+}
+</script>
+                
+                
+                <!--coupon code area start-->
+                
+                
                 <!--coupon code area end-->
             
-        </div>     
-    </div>
+      
 
 
 

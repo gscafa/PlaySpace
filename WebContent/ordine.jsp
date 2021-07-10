@@ -26,7 +26,8 @@
 </head>
 
 <body>
-<%ArrayList<OrdineItem> prodotti =(ArrayList<OrdineItem>) session.getAttribute("prodOrdine"); %>
+<%ArrayList<OrdineItem> prodotti =(ArrayList<OrdineItem>) session.getAttribute("prodOrdine"); 
+double t=0;%>
  
 <%@include file="header.jsp" %>
 
@@ -52,7 +53,7 @@
                             <tbody>
                             <%if(prodotti!=null){
                             for (OrdineItem i : prodotti){
-                            	
+                            	t+=i.getPrezzo() * i.getQuantita();
                             	%>
                             
                                 <tr>
@@ -65,12 +66,38 @@
 
                                <%}} %>
                             </tbody>
-                        </table>   
+                        </table>  
+                         
                              
                             </div>  
                              
                         </div>
                     </div>
+                    
+                </div>
+                <div class="coupon_area">
+                    <div class="row">
+                        
+                        <div class="col-lg-6 col-md-6">
+                            <div class="coupon_code right">
+                                <h3>Totale</h3>
+                                <div class="coupon_inner">
+                               
+                                
+                               
+                                <div class="cart_subtotal">
+                                    <p>Totale</p>
+                                   
+                                    <p class="cart_amount">€<%=String.format("%.2f",t)%></p>
+                                    
+                                </div>
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
                 </div>
 
 <%@include file="footer.jsp" %>

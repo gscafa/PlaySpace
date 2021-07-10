@@ -69,7 +69,7 @@ public class Login extends HttpServlet {
 		if(a)
 			session.setAttribute("admin", true);
 		session.setAttribute("userFound", true);
-		request.getRequestDispatcher("utente.jsp").forward(request,response);
+		request.getRequestDispatcher("index.jsp").forward(request,response);
 		}
 		else {
 			session.setAttribute("userFound", false);

@@ -40,6 +40,7 @@ CREATE TABLE `composto` (
 
 LOCK TABLES `composto` WRITE;
 /*!40000 ALTER TABLE `composto` DISABLE KEYS */;
+INSERT INTO `composto` VALUES (1,1),(2,2),(2,3),(3,4);
 /*!40000 ALTER TABLE `composto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,6 +67,7 @@ CREATE TABLE `effettuazione` (
 
 LOCK TABLES `effettuazione` WRITE;
 /*!40000 ALTER TABLE `effettuazione` DISABLE KEYS */;
+INSERT INTO `effettuazione` VALUES ('seppe00',1),('craxi',2),('seppe00',3);
 /*!40000 ALTER TABLE `effettuazione` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,8 +82,9 @@ CREATE TABLE `ordine` (
   `idordine` int NOT NULL AUTO_INCREMENT,
   `data` date NOT NULL,
   `iva` int NOT NULL,
+  `totale` decimal(5,2) NOT NULL,
   PRIMARY KEY (`idordine`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,6 +93,7 @@ CREATE TABLE `ordine` (
 
 LOCK TABLES `ordine` WRITE;
 /*!40000 ALTER TABLE `ordine` DISABLE KEYS */;
+INSERT INTO `ordine` VALUES (1,'2021-07-09',22,70.00),(2,'2021-07-09',22,89.80),(3,'2021-07-10',22,120.00);
 /*!40000 ALTER TABLE `ordine` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +113,7 @@ CREATE TABLE `prodotto` (
   `prezzo` decimal(4,2) NOT NULL,
   `votomedio` decimal(2,1) NOT NULL DEFAULT '0.0',
   PRIMARY KEY (`idprodotto`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +122,7 @@ CREATE TABLE `prodotto` (
 
 LOCK TABLES `prodotto` WRITE;
 /*!40000 ALTER TABLE `prodotto` DISABLE KEYS */;
-INSERT INTO `prodotto` VALUES (1,'Halo 5','Sparatutto','Capolavoro','XBOX ONE',39.90,0.0),(2,'Battlefield 5','Sparatutto','Bello','PS4',70.00,0.0),(3,'Battlefield 5','Sparatutto',NULL,'XBOX ONE',70.00,0.0),(4,'DOOM','Sparatutto',NULL,'XBOX ONE',60.00,0.0),(5,'DOOM','Sparatutto',NULL,'PS4',60.00,0.0),(6,'DOOM','Sparatutto',NULL,'Nintendo Switch',50.00,0.0),(7,'Titanfall 2','Sparatutto',NULL,'XBOX ONE',70.00,0.0),(8,'Titanfall 2','Sparatutto',NULL,'PS4',69.90,0.0),(9,'Battlefield 1','Sparatutto',NULL,'XBOX ONE',39.90,0.0),(10,'Battlefield 1','Sparatutto',NULL,'PS4',39.90,0.0),(11,'Wolfenstein','Avventura',NULL,'XBOX ONE',39.90,0.0),(12,'Wolfenstein','Avventura',NULL,'PS4',39.90,0.0),(13,'Wolfenstein II','Avventura',NULL,'XBOX ONE',45.90,0.0),(14,'Wolfenstein II','Avventura',NULL,'PS4',45.90,0.0),(15,'Borderlands 2','Avventura',NULL,'XBOX 360',19.90,0.0),(16,'Borderlands 2','Avventura',NULL,'PS3',19.90,0.0),(17,'Destiny','Sparatutto',NULL,'XBOX ONE',39.90,0.0),(18,'Destiny','Sparatutto',NULL,'PS4',39.90,0.0),(19,'RAGE 2','Avventura',NULL,'XBOX ONE',19.90,0.0),(20,'RAGE 2','Avventura',NULL,'PS4',19.90,0.0),(21,'Far Cry 5','Avventura',NULL,'XBOX ONE',69.90,0.0),(22,'Far Cry 5','Avventura',NULL,'PS4',69.90,0.0),(23,'Final Fantasy XV','Avventura',NULL,'XBOX ONE',69.90,0.0),(24,'Final Fantasy XV','Avventura',NULL,'PS4',69.90,0.0),(25,'Nier: Automata','RPG',NULL,'PS4',39.90,0.0),(26,'Fallout: New Vegas','RPG',NULL,'XBOX 360',19.90,0.0),(27,'Fallout: New Vegas','RPG',NULL,'PS3',19.90,0.0),(28,'Bloodborne','RPG',NULL,'PS4',69.90,0.0),(29,'Dark Souls','RPG',NULL,'XBOX 360',19.90,0.0),(30,'Dark Souls','RPG',NULL,'PS3',19.90,0.0),(31,'Dark Souls II','RPG',NULL,'XBOX ONE',39.90,0.0),(32,'Dark Souls II','RPG',NULL,'PS4',39.90,0.0),(33,'Dark Souls Remastered','RPG',NULL,'Nintendo Switch',39.90,0.0),(34,'FIFA 19','Sport',NULL,'XBOX ONE',69.90,0.0),(35,'FIFA 19','Sport',NULL,'PS4',69.90,0.0),(36,'FIFA 19','Sport',NULL,'Nintendo Switch',69.90,0.0),(37,'NBA 2K19','Sport',NULL,'XBOX ONE',69.90,0.0),(38,'NBA 2K19','Sport',NULL,'PS4',69.90,0.0),(39,'NBA 2K18','Sport',NULL,'XBOX ONE',39.90,0.0),(40,'NBA 2K18','Sport',NULL,'PS4',39.90,0.0),(41,'F1 2018','Sport',NULL,'XBOX ONE',69.90,0.0),(42,'F1 2018','Sport',NULL,'PS4',69.90,0.0),(43,'F1 2017','Sport',NULL,'XBOX ONE',19.90,0.0),(44,'F1 2017','Sport',NULL,'PS4',19.90,0.0);
+INSERT INTO `prodotto` VALUES (1,'Halo 5','Sparatutto','Capolavoro','XBOX ONE',39.90,0.0),(2,'Battlefield 5','Sparatutto','Bello','PS4',70.00,0.0),(3,'Battlefield 5','Sparatutto',NULL,'XBOX ONE',70.00,0.0),(4,'DOOM','Sparatutto',NULL,'XBOX ONE',60.00,0.0),(5,'DOOM','Sparatutto',NULL,'PS4',60.00,0.0),(6,'DOOM','Sparatutto',NULL,'Nintendo Switch',50.00,0.0),(7,'Titanfall 2','Sparatutto',NULL,'XBOX ONE',70.00,0.0),(8,'Titanfall 2','Sparatutto',NULL,'PS4',69.90,0.0),(9,'Battlefield 1','Sparatutto',NULL,'XBOX ONE',39.90,0.0),(10,'Battlefield 1','Sparatutto',NULL,'PS4',39.90,0.0),(11,'Wolfenstein','Avventura',NULL,'XBOX ONE',39.90,0.0),(12,'Wolfenstein','Avventura',NULL,'PS4',39.90,0.0),(13,'Wolfenstein II','Avventura',NULL,'XBOX ONE',45.90,0.0),(14,'Wolfenstein II','Avventura',NULL,'PS4',45.90,0.0),(15,'Borderlands 2','Avventura',NULL,'XBOX 360',19.90,0.0),(16,'Borderlands 2','Avventura',NULL,'PS3',19.90,0.0),(17,'Destiny','Sparatutto',NULL,'XBOX ONE',39.90,0.0),(18,'Destiny','Sparatutto',NULL,'PS4',39.90,0.0),(19,'RAGE 2','Avventura',NULL,'XBOX ONE',19.90,0.0),(20,'RAGE 2','Avventura',NULL,'PS4',19.90,0.0),(21,'Far Cry 5','Avventura',NULL,'XBOX ONE',69.90,0.0),(22,'Far Cry 5','Avventura',NULL,'PS4',69.90,0.0),(23,'Final Fantasy XV','Avventura',NULL,'XBOX ONE',69.90,0.0),(24,'Final Fantasy XV','Avventura',NULL,'PS4',69.90,0.0),(25,'Nier: Automata','RPG',NULL,'PS4',39.90,3.7),(26,'Fallout: New Vegas','RPG',NULL,'XBOX 360',19.90,0.0),(27,'Fallout: New Vegas','RPG',NULL,'PS3',19.90,0.0),(28,'Bloodborne','RPG',NULL,'PS4',69.90,0.0),(29,'Dark Souls','RPG',NULL,'XBOX 360',19.90,0.0),(30,'Dark Souls','RPG',NULL,'PS3',19.90,0.0),(31,'Dark Souls II','RPG',NULL,'XBOX ONE',39.90,0.0),(32,'Dark Souls II','RPG',NULL,'PS4',39.90,0.0),(33,'Dark Souls Remastered','RPG',NULL,'Nintendo Switch',39.90,0.0),(34,'FIFA 19','Sport',NULL,'XBOX ONE',69.90,0.0),(35,'FIFA 19','Sport',NULL,'PS4',69.90,0.0),(36,'FIFA 19','Sport',NULL,'Nintendo Switch',69.90,0.0),(37,'NBA 2K19','Sport',NULL,'XBOX ONE',69.90,0.0),(38,'NBA 2K19','Sport',NULL,'PS4',69.90,0.0),(39,'NBA 2K18','Sport',NULL,'XBOX ONE',39.90,0.0),(40,'NBA 2K18','Sport',NULL,'PS4',39.90,0.0),(41,'F1 2018','Sport',NULL,'XBOX ONE',69.90,0.0),(42,'F1 2018','Sport',NULL,'PS4',69.90,0.0),(43,'F1 2017','Sport',NULL,'XBOX ONE',19.90,0.0),(44,'F1 2017','Sport',NULL,'PS4',19.90,0.0);
 /*!40000 ALTER TABLE `prodotto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,11 +136,10 @@ DROP TABLE IF EXISTS `prodotto_ordine`;
 CREATE TABLE `prodotto_ordine` (
   `idprodotto_ordine` int NOT NULL,
   `nome` varchar(45) NOT NULL,
-  `categoria` varchar(45) NOT NULL,
   `piattaforma` varchar(45) NOT NULL,
-  `prodotto_ordinecol` varchar(45) NOT NULL,
   `prezzo` decimal(4,2) NOT NULL,
   `quantita` int NOT NULL,
+  `pathimmagine` varchar(45) NOT NULL,
   PRIMARY KEY (`idprodotto_ordine`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -147,6 +150,7 @@ CREATE TABLE `prodotto_ordine` (
 
 LOCK TABLES `prodotto_ordine` WRITE;
 /*!40000 ALTER TABLE `prodotto_ordine` DISABLE KEYS */;
+INSERT INTO `prodotto_ordine` VALUES (1,'Battlefield 5','PS4',70.00,1,'assets/img/prodotti/2.jpg'),(2,'FIFA 19','PS4',69.90,1,'assets/img/prodotti/35.jpg'),(3,'Borderlands 2','XBOX 360',19.90,1,'assets/img/prodotti/15.jpg'),(4,'DOOM','XBOX ONE',60.00,2,'assets/img/prodotti/4.jpg');
 /*!40000 ALTER TABLE `prodotto_ordine` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,7 +181,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES ('seppe00','g.scafa@libero.it','ktsm','Giuseppe','Scafa','Via Giardino, 45','San Gregorio Magno','2000-12-18',1);
+INSERT INTO `utente` VALUES ('craxi','oiiooo@gma.ir','Papete!20','peppino','scafa','cwecwecw','ecwvcer','2000-12-18',0),('seppe00','g.scafa@libero.it','ktsm','Giuseppe','Scafa','Via Giardino, 45','San Gregorio Magno','2000-12-18',1);
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,6 +209,7 @@ CREATE TABLE `valutazione` (
 
 LOCK TABLES `valutazione` WRITE;
 /*!40000 ALTER TABLE `valutazione` DISABLE KEYS */;
+INSERT INTO `valutazione` VALUES ('seppe00',25,5.0),('seppe00',25,1.0),('seppe00',25,5.0);
 /*!40000 ALTER TABLE `valutazione` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -217,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-08 12:18:15
+-- Dump completed on 2021-07-10 10:54:03

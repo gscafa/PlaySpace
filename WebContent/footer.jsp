@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     
     <!-- CSS 
@@ -19,7 +19,7 @@
 
 </head>
 <body>
-
+<%Boolean log = (Boolean)session.getAttribute("logged"); %>
 <!--footer area start-->
     <footer class="footer_widgets">
         <div class="footer_top">
@@ -54,9 +54,13 @@
                         <h3>Il mio Account</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="#">Account</a></li>
-                                <li><a href="#">Storico Ordini</a></li>
-                              
+                            <%if ((log == false) || log ==null){ %>
+                                <li><a href="login.jsp">Account</a></li>
+                                <li><a href="login.jsp">Storico Ordini</a></li>
+                              <%} else{%>
+                              <li><a href="utente.jsp">Account</a></li>
+                                <li><a href="StoricoOrdini">Storico Ordini</a></li>
+                                <%} %>
                             </ul>
                         </div>
                     </div>

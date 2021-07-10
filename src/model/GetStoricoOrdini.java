@@ -27,6 +27,8 @@ public class GetStoricoOrdini {
 				totale = rs.getDouble("totale");
 				result.add(new Ordine(id,data,totale));
 			}
+			con.commit();
+			DriverManagerConnectionPool.releaseConnection(con);
 			
 			
 		}

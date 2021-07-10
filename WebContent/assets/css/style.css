@@ -1357,11 +1357,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     padding-right: 2px;
   }
 }
-.mini_cart_wrapper:hover .mini_cart {
-  max-height: 500px;
-  padding: 18px 28px 33px;
-  visibility: visible;
-}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .mini_cart_wrapper:hover .mini_cart {
     padding: 10px 11px 20px;

@@ -117,7 +117,7 @@
 <script src="assets/js/main.js"></script>
 <script>
 function checkNamesurname(inputtxt) {
-	var name = /^[A-Za-z]+$/;;
+	var name = /^[A-Za-z]+$/;
 	if(inputtxt.value.match(name)) 
 		return true
 
