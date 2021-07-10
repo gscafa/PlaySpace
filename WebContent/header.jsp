@@ -81,12 +81,12 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                                 <li class="menu-item-has-children active">
                                     <a href="index.jsp">Home</a>
                                 </li>
-                                <li class="menu-item-has-children">
-                                    <a href="product-details.html">Consoles</a>
-                                </li>
+                                
                                 <li class="menu-item-has-children">
                                     <a href="#">Categorie</a>
                                     <ul class="sub-menu">
+                                    <li><a href="about.html">Tutti</a></li>
+                                    <li><a href="about.html">Consoles</a></li>
                                         <li><a href="about.html">RPG</a></li>
 										<li><a href="contact.html">Sparatutto</a></li>
 										<li><a href="privacy-policy.html">Avventura</a></li>
@@ -186,6 +186,8 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                                         
                                         <li><a class="active" href="prodotti.jsp">categorie <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub_menu pages">
+                                           		<li><a href="#" id="Tutti">Tutti</a></li>
+                                            	<li><a href="#" id="Console">Consoles</a></li>
                                                 <li><a href="#" id="RPG">RPG</a></li>
                                                 <li><a href="#" id="Sparatutto">Sparatutto</a></li>
                                                 <li><a href="#" id="Avventura">Avventura</a></li>

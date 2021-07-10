@@ -17,6 +17,12 @@ public class Ordine {
 		totale = t;
 	}
 	
+	public Ordine(int id, String d, double t, String u) {
+		data = LocalDate.parse(d);
+		idOrdine = id;
+		totale = t;
+		user = u;
+	}
 	
 	public Ordine () {
 		idOrdine = MaxOrdine.getMaxOrdine() + 1;
@@ -61,6 +67,15 @@ public class Ordine {
 		prodotti.add(c);
 	}
 	
+	
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
 	public void carrelloToOrdine(Carrello c){
 		ArrayList<CarrelloItem> a = c.getProdotti();
 		totale = c.getTotal();
@@ -79,7 +94,7 @@ public class Ordine {
 			k++;
 		}
 	}
-
+	String user;
 	ArrayList<OrdineItem> prodotti;
 	int idOrdine;
 	LocalDate data;
