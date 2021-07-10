@@ -133,14 +133,7 @@ Boolean logged = (Boolean) session.getAttribute("logged");
                         </div>
                         <div class="col-lg-9 col-md-6">
                             <div class="middel_right">
-                                <div class="search_container">
-                                   <form action="#">
-                                        <div class="search_box">
-                                            <input placeholder="Cerca prodotti" type="text">
-                                            <button type="submit">Cerca</button> 
-                                        </div>
-                                    </form>
-                                </div>
+                               
                                 <div class="middel_right_info">
                                     <div class="header_wishlist">
                                     <%if(admin == true && logged == true) {%>
