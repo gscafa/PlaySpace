@@ -23,13 +23,15 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom.css">
-
+	<script src="jquery-3.6.0.min.js"></script>
+    <script src="admin.js"></script>
 </head>
 
 <body>
-<%Utente utente = (Utente)session.getAttribute("user"); %>
+
  
 <%@include file="header.jsp" %>
+
   <div class="main_menu_area" style="background-color:red">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -37,8 +39,9 @@
                             <div class="main_menu menu_position"> 
                                 <nav>  
                                     <ul>
-                                        <li><a href="modDati.jsp">Modifica Dati</a></li>
-                                        <li><a href="StoricoOrdini">Storico Ordini</a></li>
+                                        <li><a href="#" id="prodotti">Visualizza prodotti</a></li>
+                                        <li><a href="#" id="aggiungi">Aggiungi prodotto</a></li>
+                                        <li><a href="#" id="ordini">Visualizza Ordini</a></li>
 
                                     </ul>  
                                 </nav> 
@@ -47,24 +50,17 @@
                     </div>
                 </div>
             </div>
-            <div style="width: 600px;padding: 20px;border: 5px solid blue;margin: auto; ">
-            <h1 style="text-align:center">Benvenuto/a , <%=utente.getNome() %>!</h1>
-            <h3>Riepilogo Dati:</h3>
-            <h4>Nome: <%=utente.getNome() + " " + utente.getCognome() %></h4>
-             <h4>Indirizzo: <%=utente.getIndirizzo()+", "+ utente.getCitta() %></h4>
-              <h4>Nome</h4>
-               <h4>Nome</h4>
-               </div>
-            
-            
+            <br><br>
+            <div class="container">
+           
+            <div class="row justify-content-center" id="result">
+                
+               
+               
+            </div>
+        </div>
+
 <%@include file="footer.jsp" %>
 
-   <!-- Plugins JS -->
-<script src="assets/js/plugins.js"></script>
-
-<!-- Main JS -->
-<script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
