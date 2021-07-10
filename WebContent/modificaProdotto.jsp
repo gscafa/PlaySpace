@@ -59,7 +59,7 @@ id = Integer.parseInt(request.getParameter("id"));%>
             <div class="row justify-content-center">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-content">
-                                    <form action="ModificaProdotto" method="post">
+                                    <form action="ModificaProdotto">
                                        
                                        
                                         
@@ -68,32 +68,21 @@ id = Integer.parseInt(request.getParameter("id"));%>
                                             <input type="text" id="nome" placeholder="Inserisci nome" name="nome" required>
                                         </div>
                                         
-                                        <div class="single-acc-field">
-                                            <label for="categoria">Categoria</label>
-                                            <input type="text" id="categoria" placeholder="Inserisci categoria" name="categoria" required>
-                                        </div>
-                                        
-                                        
+
                                         <div class="single-acc-field">
                                             <label for="descrizione">Descrizione</label>
                                             <input type="text" id="descrizione" placeholder="Inserisci descrizione" name="descrizione" required>
                                         </div>
-                                        
-                                        
-                                        <div class="single-acc-field">
-                                            <label for="piattaforma">Piattaforma</label>
-                                            <input type="text" id="piattaforma" placeholder="Inserisci piattaforma" name="piattaforma" required>
-                                        </div>
-                                        
-                                        
+                                      
                                         <div class="single-acc-field">
                                             <label for="nome">Prezzo</label>
                                             <input type="text" id="prezzo" placeholder="Inserisci prezzo" name="prezzo" required>
                                         </div>
                                         
+                                        <input type="hidden" name="id" value="<%=id %>">
                                       
                                         <div class="single-acc-field">
-                                            <button type="submit">Aggiungi</button>
+                                            <button type="submit">Modifica</button>
                                         </div>
                                     </form>
                                 </div>

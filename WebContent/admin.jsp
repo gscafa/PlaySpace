@@ -41,7 +41,7 @@
                                 <nav>  
                                     <ul>
                                         <li><a href="#" id="prodotti">Visualizza prodotti</a></li>
-                                        <li><a href="#" id="aggiungi">Aggiungi prodotto</a></li>
+                                        <li><a href="aggiungiProdotto.jsp" id="aggiungi">Aggiungi prodotto</a></li>
                                         <li><a href="TuttiOrdini" id="ordini">Visualizza Ordini</a></li>
 
                                     </ul>  

@@ -40,7 +40,7 @@
                                 <nav>  
                                     <ul>
                                         <li><a href="admin.jsp" id="prodotti">Visualizza prodotti</a></li>
-                                        <li><a href="#" id="aggiungi">Aggiungi prodotto</a></li>
+                                        <li><a href="aggiungiProdotto.jsp" id="aggiungi">Aggiungi prodotto</a></li>
                                         <li><a href="TuttiOrdini" id="ordini">Visualizza Ordini</a></li>
 
                                     </ul>  
@@ -56,7 +56,7 @@
             <div class="row justify-content-center">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-content">
-                                    <form action="AggiungiProdotto" method="post">
+                                    <form action="AggiungiProdotto" method="post" enctype="multipart/form-data">
                                        
                                        
                                         

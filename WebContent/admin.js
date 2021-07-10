@@ -26,7 +26,7 @@ $(document).ready(function (){
                        " </a>"+
                        "<div class='search_box'>" +
                          "<a href='RimuoviProdotto?id="+current.idProdotto+"'<button class='button'>Rimuovi Prodotto</button></a> "+
-                         "<a href='ModificaProdotto?id="+current.idProdotto+"'<button class='button'>Modifica Prodotto</button></a> "+              
+                         "<a href='modificaProdotto.jsp?id="+current.idProdotto+"'<button class='button'>Modifica Prodotto</button></a> "+              
                          "</div><br><br>" +
                     "</div>"+
                 "</div>");

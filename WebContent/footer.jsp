@@ -19,7 +19,8 @@
 
 </head>
 <body>
-<%Boolean log = (Boolean)session.getAttribute("logged"); %>
+<%Boolean log = (Boolean)session.getAttribute("logged"); 
+if (log == null) log = false;%>
 <!--footer area start-->
     <footer class="footer_widgets">
         <div class="footer_top">
@@ -54,7 +55,7 @@
                         <h3>Il mio Account</h3>
                         <div class="footer_menu">
                             <ul>
-                            <%if ((log == false) || log ==null){ %>
+                           <%if ((log == false) || log ==null){ %>
                                 <li><a href="login.jsp">Account</a></li>
                                 <li><a href="login.jsp">Storico Ordini</a></li>
                               <%} else{%>

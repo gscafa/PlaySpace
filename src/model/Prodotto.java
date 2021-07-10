@@ -11,6 +11,16 @@ public class Prodotto {
 		votoMedio = vm;
 	}
 	
+	public Prodotto(int id, String n, String d, String p, double pr, double vm, String c) {
+		idProdotto = id;
+		nome = n;
+		descrizione = d;
+		piattaforma = p;
+		prezzo = pr;
+		votoMedio = vm;
+		categoria = c;
+	}
+	
 	
 	public int getIdProdotto() {
 		return idProdotto;
@@ -49,8 +59,21 @@ public class Prodotto {
 		this.votoMedio = votoMedio;
 	}
 	
+	
+	
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+
+
 	int idProdotto;
 	String nome;
+	String categoria;
 	String descrizione;
 	String piattaforma;
 	double prezzo;
