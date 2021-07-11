@@ -33,7 +33,7 @@ public class Checkout extends HttpServlet {
 		
 		Ordine ordine = new Ordine();
 		ordine.carrelloToOrdine(carrello);
-		InsertOrdine.insertOrdine(ordine,user.getUsername());
+		OrdineDM.insertOrdine(ordine,user.getUsername());
 		carrello.empty();
 		session.setAttribute("q", carrello.getTotalQuantity());
 		session.setAttribute("carrello", carrello);

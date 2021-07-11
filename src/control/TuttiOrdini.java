@@ -10,10 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.GetStoricoOrdini;
-import model.GetTuttiOrdini;
-import model.Ordine;
-import model.Utente;
+import model.*;
 
 /**
  * Servlet implementation class TuttiOrdini
@@ -35,7 +32,7 @@ public class TuttiOrdini extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		ArrayList<Ordine> ordini = GetTuttiOrdini.getTuttiOrdini();
+		ArrayList<Ordine> ordini = OrdineDM.getTuttiOrdini();
 		
 		session.setAttribute("ordini", ordini);
 		response.sendRedirect("ordiniAdmin.jsp");

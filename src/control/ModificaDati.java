@@ -41,8 +41,8 @@ public class ModificaDati extends HttpServlet {
 		String passwordn = request.getParameter("passwordn");
 		String email = request.getParameter("email");
 		String user = request.getParameter("user");
-		if(CheckPassword.checkPassword(user, passwordv))
-			UpdateUtente.updateUtente(user, passwordn, email);
+		if(UtenteDM.checkPassword(user, passwordv))
+			UtenteDM.updateUtente(user, passwordn, email);
 		
 		response.sendRedirect("utente.jsp");
 	

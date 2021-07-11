@@ -25,7 +25,7 @@ public class Ordine {
 	}
 	
 	public Ordine () {
-		idOrdine = MaxOrdine.getMaxOrdine() + 1;
+		idOrdine = OrdineDM.getMaxOrdine() + 1;
 		prodotti = new ArrayList<OrdineItem>();
 		data = LocalDate.now();
 	}
@@ -87,7 +87,7 @@ public class Ordine {
 		for(CarrelloItem i : a) {
 			
 			ptemp = i.getProdotto();
-			id = MaxPOrdine.getMaxPOrdine() +k;
+			id = OrdineDM.getMaxPOrdine() +k;
 			path = "assets/img/prodotti/"+ptemp.getIdProdotto()+".jpg";
 			temp = new OrdineItem(id,ptemp.getNome(),ptemp.getPiattaforma(),ptemp.getPrezzo(),i.getQuantita(),path);
 			prodotti.add(temp);

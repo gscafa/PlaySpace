@@ -30,7 +30,7 @@ public class StoricoOrdini extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Utente utente = (Utente)session.getAttribute("user");
-		ArrayList<Ordine> ordini = GetStoricoOrdini.getStoricoOrdini(utente.getUsername());
+		ArrayList<Ordine> ordini = OrdineDM.getStoricoOrdini(utente.getUsername());
 		
 		session.setAttribute("ordini", ordini);
 		response.sendRedirect("storicoOrdini.jsp");

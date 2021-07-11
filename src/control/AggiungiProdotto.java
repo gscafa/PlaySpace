@@ -1,5 +1,5 @@
 package control;
-import model.Prodotto;
+import model.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,8 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import model.InsertProdotto;
-import model.MaxProdotto;
+
 
 /**
  * Servlet implementation class AggiungiProdotto
@@ -50,7 +49,7 @@ public class AggiungiProdotto extends HttpServlet {
 		
 		String nome,descrizione,categoria,piattaforma;
 		double prezzo;
-		int id=MaxProdotto.getMaxProdotto() + 1;
+		int id=ProdottoDM.getMaxProdotto() + 1;
 		nome = request.getParameter("nome");
 		descrizione = request.getParameter("descrizione");
 		categoria = request.getParameter("categoria");
@@ -62,7 +61,7 @@ public class AggiungiProdotto extends HttpServlet {
 		InputStream fileContent = filePart.getInputStream();
 		copyInputStreamToFile(fileContent, file);
 		
-		InsertProdotto.insertProdotto(new Prodotto(id,nome,descrizione,piattaforma,prezzo,0,categoria));
+		ProdottoDM.insertProdotto(new Prodotto(id,nome,descrizione,piattaforma,prezzo,0,categoria));
 		
 		response.sendRedirect("admin.jsp");
 	}

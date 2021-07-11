@@ -30,8 +30,8 @@ public class AggiungiVoto extends HttpServlet {
 		String user = request.getParameter("user");
 		int voto = Integer.parseInt(request.getParameter("voto"));
 		int id = Integer.parseInt(request.getParameter("prod"));
-		UpdateVoto.updateVoto(id, user, voto);
-		Prodotto p = PrendiProdotto.searchProdotto(id);
+		ProdottoDM.updateVoto(id, user, voto);
+		Prodotto p = ProdottoDM.searchProdotto(id);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("prodotto", p);

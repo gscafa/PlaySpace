@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.PrendiProdotto;
+
 
 /**
  * Servlet implementation class DettaglioProdotto
@@ -31,7 +31,7 @@ public class DettaglioProdotto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
-		Prodotto p = PrendiProdotto.searchProdotto(id);
+		Prodotto p = ProdottoDM.searchProdotto(id);
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("prodotto", p);

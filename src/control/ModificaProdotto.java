@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.UpdateProdotto;
+import model.*;
 
 /**
  * Servlet implementation class ModificaProdotto
@@ -33,7 +33,7 @@ public class ModificaProdotto extends HttpServlet {
 		double prezzo = Double.parseDouble(request.getParameter("prezzo"));
 		String nome = request.getParameter("nome");
 		
-		UpdateProdotto.updateProdotto(id, prezzo, descrizione,nome);
+		ProdottoDM.updateProdotto(id, prezzo, descrizione,nome);
 		response.sendRedirect("admin.jsp");
 	}
 

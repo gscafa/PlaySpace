@@ -30,7 +30,7 @@ public class VisualizzaOrdine extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		int id = Integer.parseInt(request.getParameter("id"));
-		ArrayList<OrdineItem> prodotti = GetOrdine.getOrdine(id);
+		ArrayList<OrdineItem> prodotti = OrdineDM.getOrdine(id);
 		session.setAttribute("prodOrdine", prodotti);
 		response.sendRedirect("ordine.jsp");
 	}

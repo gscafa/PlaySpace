@@ -36,7 +36,7 @@ public class AggiungiCarrello extends HttpServlet {
 		if(carrello == null)
 			carrello = new Carrello();
 		
-			carrello.addProdotto(new CarrelloItem(PrendiProdotto.searchProdotto(id),q));
+			carrello.addProdotto(new CarrelloItem(ProdottoDM.searchProdotto(id),q));
 		
 			
 			session.setAttribute("q", carrello.getTotalQuantity());

@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import model.CercaProdotti;
-import model.Prodotto;
-import model.TuttiProdotti;
+import model.*;
 
 /**
  * Servlet implementation class MostraTutto
@@ -36,7 +34,7 @@ public class MostraTutto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ArrayList<Prodotto> result = TuttiProdotti.getProdotti();
+		ArrayList<Prodotto> result = ProdottoDM.getProdotti();
 		String json = new Gson().toJson(result);
 		PrintWriter p = response.getWriter();
 		 response.setContentType("application/json");
