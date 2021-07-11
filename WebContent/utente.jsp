@@ -53,14 +53,10 @@
                     </div>
                 </div>
             </div>
-            <div style="width: 600px;padding: 20px;border: 5px solid blue;margin: auto; ">
-            <h1 style="text-align:center">Benvenuto/a , <%=utente.getNome() %>!</h1>
-            <h3>Riepilogo Dati:</h3>
-            <h4>Nome: <%=utente.getNome() + " " + utente.getCognome() %></h4>
-             <h4>Indirizzo: <%=utente.getIndirizzo()+", "+ utente.getCitta() %></h4>
-              <h4>Nome</h4>
-               <h4>Nome</h4>
-               </div>
+           <br><br><br><br>
+            <h1 style="text-align:center">Benvenuto/a , <%=utente.getNome() + " " + utente.getCognome()%>!</h1>
+           
+               <br><br><br><br>
             <%} %>
             
 <%@include file="footer.jsp" %>
