@@ -44,7 +44,7 @@
                                 <h1>PlayStation 5</h1>
                                 <h2>Play Like Never Before</h2>
                                 <p>Disponibile ora!</p>
-                                <a class="button" href="product-details.html">Acquista</a>
+                                <a class="button" href="DettaglioProdotto?id=45">Acquista</a>
                             </div>
                         </div>
                         <div class="col-xl-6 col-md-6">
@@ -65,7 +65,7 @@
                                 <h1>Xbox Series X</h1>
                                 <h2>Power Your Dreams</h2>
                                 <p>Disponibile ora!</p>
-                                <a class="button" href="product-details.html">Acquista</a>
+                                <a class="button" href="DettaglioProdotto?id=46">Acquista</a>
                             </div>
                         </div>                        
                         <div class="col-xl-6 col-md-6">
@@ -84,7 +84,7 @@
                                 <h1>Nintendo Switch</h1>
                                 <h2>Divertiti dove, quando e con chi vuoi!</h2>
                                 <p>Disponibile ora!</p>
-                                <a class="button" href="product-details.html">Acquista</a>
+                                <a class="button" href="DettaglioProdotto?id=47">Acquista</a>
                             </div>
                         </div>                      
                         <div class="col-xl-6 col-md-6">
