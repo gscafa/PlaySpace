@@ -31,7 +31,6 @@ public class AggiungiCarrello extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		int q = Integer.parseInt(request.getParameter("quantita"));
 		
-		System.out.println(id);
 		Carrello carrello=(Carrello)session.getAttribute("carrello");
 		if(carrello == null)
 			carrello = new Carrello();

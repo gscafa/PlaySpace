@@ -58,7 +58,12 @@
                                     <td class="product_thumb"><img src="assets/img/prodotti/<%=i.getProdotto().getIdProdotto() %>.jpg" alt=""></td>
                                     <td class="product_name"><a href="#"><%=i.getProdotto().getNome() %></a></td>
                                     <td class="product-price">€<%=String.format("%.2f",i.getProdotto().getPrezzo()) %></td>
-                                    <td class="product_quantity"><%=i.getQuantita() %> </td>
+                                    
+                                    <td class="product_quantity"><%=i.getQuantita() %>  
+                                     <a href="AggiungiCarrello?id=<%=i.getProdotto().getIdProdotto()%>&quantita=1"><img src="assets/img/plus.jpg" style="width:30px; height:30px"></a>
+                                     <a href="AggiungiCarrello?id=<%=i.getProdotto().getIdProdotto()%>&quantita=-1"><img src="assets/img/minus.png" style="width:30px; height:30px"></a>
+                                     
+                                    </td>
                                     <td class="product_total">€<%=String.format("%.2f",i.getProdotto().getPrezzo() * i.getQuantita() )%></td>
 									<td class="product_remove"><a href="RimuoviCarrello?id=<%=i.getProdotto().getIdProdotto()%>"><i class="ion-android-close"></i></a></td>
                                 </tr>
