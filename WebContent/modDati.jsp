@@ -28,6 +28,9 @@
 <body>
 
 <%@ include file="header.jsp" %>
+<%if(logged==false || logged==null) 
+	response.sendRedirect("login.jsp");
+	else{%>
 <%Utente utente = (Utente)session.getAttribute("user"); %> 
 
  
@@ -64,7 +67,7 @@
              
     </section>
 </body>
-
+<%} %>
 <%@include file="footer.jsp" %>
 
    <!-- Plugins JS -->

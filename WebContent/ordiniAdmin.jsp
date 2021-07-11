@@ -26,9 +26,12 @@
 </head>
 
 <body>
+
 <%ArrayList<Ordine> ordini =(ArrayList<Ordine>) session.getAttribute("ordini"); %>
  
 <%@include file="header.jsp" %>
+<%if(admin==false ) 
+	response.sendRedirect("login.jsp");%>
 <div class="main_menu_area" style="background-color:red">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -37,7 +40,7 @@
                                 <nav>  
                                     <ul>
                                         <li><a href="admin.jsp" id="prodotti">Visualizza prodotti</a></li>
-                                        <li><a href="#" id="aggiungi">Aggiungi prodotto</a></li>
+                                        <li><a href="aggiungiProdotto.jsp" id="aggiungi">Aggiungi prodotto</a></li>
                                         <li><a href="TuttiOrdini" id="ordini">Visualizza Ordini</a></li>
 
                                     </ul>  

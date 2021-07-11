@@ -16,13 +16,15 @@
     <!-- CSS 
     ========================= -->
    
-
+	<script src="jquery-3.6.0.min.js"></script>
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/css/plugins.css">
     
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    
+
 
 </head>
 

@@ -29,6 +29,9 @@
 <%ArrayList<Ordine> ordini =(ArrayList<Ordine>) session.getAttribute("ordini"); %>
  
 <%@include file="header.jsp" %>
+<%if(logged==false || logged==null) 
+	response.sendRedirect("login.jsp");
+	else{%>
 <br><br>
 <H1 style="text-align:center">Storico Ordini</H1>
 <div class="shopping_cart_area mt-60">
@@ -72,7 +75,7 @@
             
         </div>     
     </div>
-
+<%} %>
 
 <%@include file="footer.jsp" %>
 
