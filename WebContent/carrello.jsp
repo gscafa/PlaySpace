@@ -99,7 +99,10 @@
                                     <%} %>
                                 </div>
                                 <div class="checkout_btn">
-                                <%if (logged) {%>
+                                
+                                <%if(carrello == null || carrello.isEmpty()) {%>
+                                <a href="#">Vai all'acquisto</a>
+                                <%} else if (logged) {%>
                                     <a href="checkout.jsp">Vai all'acquisto</a>
                                     <%} else{%>
                                      <a href="login.jsp">Vai all'acquisto</a>
